@@ -24,7 +24,7 @@ export const views: Record<
 > = {
   0: {
     view: "small",
-    icon: "mdi-view-comfy",
+    icon: "mdiViewComfy",
     "size-cols": 4,
     "size-sm": 2,
     "size-md": 2,
@@ -33,7 +33,7 @@ export const views: Record<
   },
   1: {
     view: "big",
-    icon: "mdi-view-module",
+    icon: "mdiViewModule",
     "size-cols": 6,
     "size-sm": 3,
     "size-md": 3,
@@ -42,7 +42,7 @@ export const views: Record<
   },
   2: {
     view: "list",
-    icon: "mdi-view-list",
+    icon: "mdiViewList",
     "size-cols": 12,
     "size-sm": 12,
     "size-md": 12,
@@ -60,13 +60,13 @@ export const views: Record<
 export function getRoleIcon(role: string) {
   switch (role) {
     case "admin":
-      return "mdi-shield-crown-outline";
+      return "mdiShieldCrownOutline";
     case "editor":
-      return "mdi-file-edit-outline";
+      return "mdiFileEditOutline";
     case "viewer":
-      return "mdi-book-open-variant-outline";
+      return "mdiBookOpenVariantOutline";
     default:
-      return "mdi-account";
+      return "mdiAccount";
   }
 }
 

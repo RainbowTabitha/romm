@@ -35,7 +35,7 @@ async function switchFromFavourites() {
         favoriteCollection.value = data;
         emitter?.emit("snackbarShow", {
           msg: `Collection ${data.name} created successfully!`,
-          icon: "mdi-check-bold",
+          icon: "mdiCheckBold",
           color: "green",
           timeout: 2000,
         });
@@ -44,7 +44,7 @@ async function switchFromFavourites() {
         console.log(error);
         emitter?.emit("snackbarShow", {
           msg: error.response.data.detail,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
         });
         return;
@@ -68,7 +68,7 @@ async function switchFromFavourites() {
         msg: `${props.rom.name} ${
           collectionsStore.isFavorite(props.rom) ? "added to" : "removed from"
         } ${favoriteCollection.value?.name} successfully!`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -79,7 +79,7 @@ async function switchFromFavourites() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -99,7 +99,7 @@ async function resetLastPlayed() {
     .then(() => {
       emitter?.emit("snackbarShow", {
         msg: `${props.rom.name} removed from Continue Playing`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -110,7 +110,7 @@ async function resetLastPlayed() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -121,7 +121,7 @@ async function onScan() {
   scanningStore.set(true);
   emitter?.emit("snackbarShow", {
     msg: `Refreshing ${props.rom.name} metadata...`,
-    icon: "mdi-loading mdi-spin",
+    icon: "mdiLoading mdiSpin",
     color: "primary",
   });
 
@@ -144,9 +144,7 @@ async function onScan() {
         @click="emitter?.emit('showMatchRomDialog', rom)"
       >
         <v-list-item-title class="d-flex">
-          <v-icon icon="mdi-search-web" class="mr-2" />{{
-            t("rom.manual-match")
-          }}
+          <v-icon icon="mdiSearchWeb" class="mr-2" />{{ t("rom.manual-match") }}
         </v-list-item-title>
         <v-list-item-subtitle>
           {{
@@ -161,12 +159,12 @@ async function onScan() {
         @click="emitter?.emit('showEditRomDialog', { ...rom })"
       >
         <v-list-item-title class="d-flex">
-          <v-icon icon="mdi-pencil-box" class="mr-2" />{{ t("rom.edit") }}
+          <v-icon icon="mdiPencilBox" class="mr-2" />{{ t("rom.edit") }}
         </v-list-item-title>
       </v-list-item>
       <v-list-item class="py-4 pr-5" @click="onScan">
         <v-list-item-title class="d-flex">
-          <v-icon icon="mdi-magnify-scan" class="mr-2" />{{
+          <v-icon icon="mdiMagnifyScan" class="mr-2" />{{
             t("rom.refresh-metadata")
           }}
         </v-list-item-title>
@@ -179,7 +177,7 @@ async function onScan() {
       @click="resetLastPlayed"
     >
       <v-list-item-title class="d-flex">
-        <v-icon icon="mdi-play-protected-content" class="mr-2" />
+        <v-icon icon="mdiPlayProtectedContent" class="mr-2" />
         {{ t("rom.remove-from-playing") }}
       </v-list-item-title>
     </v-list-item>
@@ -192,8 +190,8 @@ async function onScan() {
         <v-icon
           :icon="
             collectionsStore.isFavorite(rom)
-              ? 'mdi-star-remove-outline'
-              : 'mdi-star'
+              ? 'mdiStarRemoveOutline'
+              : 'mdiStar'
           "
           class="mr-2"
         />{{
@@ -209,7 +207,7 @@ async function onScan() {
       @click="emitter?.emit('showAddToCollectionDialog', [{ ...rom }])"
     >
       <v-list-item-title class="d-flex">
-        <v-icon icon="mdi-bookmark-plus" class="mr-2" />{{
+        <v-icon icon="mdiBookmarkPlus" class="mr-2" />{{
           t("rom.add-to-collection")
         }}
       </v-list-item-title>
@@ -220,7 +218,7 @@ async function onScan() {
       @click="emitter?.emit('showRemoveFromCollectionDialog', [{ ...rom }])"
     >
       <v-list-item-title class="d-flex">
-        <v-icon icon="mdi-bookmark-remove-outline" class="mr-2" />{{
+        <v-icon icon="mdiBookmarkRemoveOutline" class="mr-2" />{{
           t("rom.remove-from-collection")
         }}
       </v-list-item-title>
@@ -232,7 +230,7 @@ async function onScan() {
         @click="emitter?.emit('showDeleteRomDialog', [rom])"
       >
         <v-list-item-title class="d-flex">
-          <v-icon icon="mdi-delete" class="mr-2" />{{ t("rom.delete") }}
+          <v-icon icon="mdiDelete" class="mr-2" />{{ t("rom.delete") }}
         </v-list-item-title>
       </v-list-item>
     </template>

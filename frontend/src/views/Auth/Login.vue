@@ -55,7 +55,7 @@ async function login() {
         response.statusText;
       emitter?.emit("snackbarShow", {
         msg: `Unable to login: ${errorMessage}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       console.error(
@@ -73,7 +73,7 @@ async function sendReset() {
     await identityApi.requestPasswordReset(forgotUser.value);
     emitter?.emit("snackbarShow", {
       msg: t("login.reset-sent"),
-      icon: "mdi-check-circle",
+      icon: "mdiCheckCircle",
       color: "green",
     });
     forgotMode.value = false;
@@ -81,7 +81,7 @@ async function sendReset() {
   } catch (error: any) {
     emitter?.emit("snackbarShow", {
       msg: error.response?.data?.detail || error.message || "Error",
-      icon: "mdi-alert-circle",
+      icon: "mdiAlertCircle",
       color: "red",
     });
   } finally {
@@ -117,7 +117,7 @@ async function loginOIDC() {
               :rules="[(value: string) => !!value || t('common.required')]"
               autocomplete="username"
               name="username"
-              prepend-inner-icon="mdi-account"
+              prepend-inner-icon="mdiAccount"
               variant="underlined"
             />
             <v-text-field
@@ -127,8 +127,8 @@ async function loginOIDC() {
               :rules="[(value: string) => !!value || t('common.required')]"
               autocomplete="current-password"
               name="password"
-              prepend-inner-icon="mdi-lock"
-              :append-inner-icon="visiblePassword ? 'mdi-eye-off' : 'mdi-eye'"
+              prepend-inner-icon="mdiLock"
+              :append-inner-icon="visiblePassword ? 'mdiEyeOff' : 'mdiEye'"
               @click:append-inner="visiblePassword = !visiblePassword"
               variant="underlined"
             />
@@ -141,7 +141,7 @@ async function loginOIDC() {
               :disabled="loggingIn || loggingInOIDC || !validForm"
             >
               <template #prepend>
-                <v-icon>mdi-login</v-icon>
+                <v-icon :icon="mdiLogin"></v-icon>
               </template>
               {{ t("login.login") }}
               <template #loader>
@@ -177,7 +177,7 @@ async function loginOIDC() {
                       .replace(/ /g, '-')}.png`"
                   >
                     <template #error>
-                      <v-icon size="20">mdi-key</v-icon>
+                      <v-icon size="20" :icon="mdiKey"></v-icon>
                     </template>
                   </v-img>
                 </v-icon>
@@ -222,7 +222,7 @@ async function loginOIDC() {
               :label="t('login.username')"
               type="text"
               required
-              prepend-inner-icon="mdi-account"
+              prepend-inner-icon="mdiAccount"
               variant="underlined"
             />
             <v-btn
@@ -234,7 +234,7 @@ async function loginOIDC() {
               :disabled="sendingReset || !forgotUser"
             >
               <template #prepend>
-                <v-icon>mdi-lock-reset</v-icon>
+                <v-icon :icon="mdiLockReset"></v-icon>
               </template>
               {{ t("login.send-reset-link") }}
               <template #loader>
@@ -250,7 +250,7 @@ async function loginOIDC() {
               variant="text"
               block
               class="mt-2"
-              prepend-icon="mdi-chevron-left"
+              prepend-icon="mdiChevronLeft"
               @click="
                 forgotMode = false;
                 forgotUser = '';

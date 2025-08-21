@@ -24,7 +24,7 @@ function showSortBar() {
         class="ml-0"
         variant="text"
         rounded="0"
-        icon="mdi-sort"
+        icon="mdiSort"
         v-bind="props"
         :color="isShowSortBar ? 'primary' : ''"
         @click="showSortBar" /></template

@@ -27,7 +27,7 @@ onBeforeMount(() => {
         <v-col>
           <v-chip
             class="text-overline"
-            prepend-icon="mdi-controller"
+            prepend-icon="mdiController"
             variant="text"
             label
           >
@@ -37,7 +37,7 @@ onBeforeMount(() => {
         <v-col>
           <v-chip
             class="text-overline"
-            prepend-icon="mdi-disc"
+            prepend-icon="mdiDisc"
             variant="text"
             label
           >
@@ -47,7 +47,7 @@ onBeforeMount(() => {
         <v-col>
           <v-chip
             class="text-overline"
-            prepend-icon="mdi-content-save"
+            prepend-icon="mdiContentSave"
             variant="text"
             label
           >
@@ -57,7 +57,7 @@ onBeforeMount(() => {
         <v-col>
           <v-chip
             class="text-overline"
-            prepend-icon="mdi-file"
+            prepend-icon="mdiFile"
             variant="text"
             label
           >
@@ -67,7 +67,7 @@ onBeforeMount(() => {
         <v-col>
           <v-chip
             class="text-overline"
-            prepend-icon="mdi-image-area"
+            prepend-icon="mdiImageArea"
             variant="text"
             label
           >
@@ -77,7 +77,7 @@ onBeforeMount(() => {
         <v-col>
           <v-chip
             class="text-overline"
-            prepend-icon="mdi-harddisk"
+            prepend-icon="mdiHarddisk"
             variant="text"
             label
           >

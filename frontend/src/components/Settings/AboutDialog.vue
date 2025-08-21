@@ -23,7 +23,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-help-circle-outline"
+    icon="mdiHelpCircleOutline"
     scroll-content
     width="550px"
   >
@@ -48,7 +48,8 @@ function closeDialog() {
           </v-hover>
         </v-col>
         <v-col class="pa-4" cols="6">
-          <v-icon class="mr-2">mdi-code-braces</v-icon><span>Source code</span>
+          <v-icon class="mr-2" :icon="mdiCodeBraces"></v-icon
+          ><span>Source code</span>
           <v-divider class="my-2" />
           <v-hover v-slot="{ isHovering, props }">
             <a
@@ -67,7 +68,7 @@ function closeDialog() {
       </v-row>
       <v-row class="align-center pa-4" no-gutters>
         <v-col class="pa-4" cols="6">
-          <v-icon class="mr-2">mdi-file-document-outline</v-icon
+          <v-icon class="mr-2" :icon="mdiFileDocumentOutline"></v-icon
           ><span>Documentation</span>
           <v-divider class="my-2" />
           <v-hover v-slot="{ isHovering, props }">
@@ -85,7 +86,8 @@ function closeDialog() {
           </v-hover>
         </v-col>
         <v-col class="pa-4" cols="6">
-          <v-icon class="mr-2">mdi-account-group</v-icon><span>Community</span>
+          <v-icon class="mr-2" :icon="mdiAccountGroup"></v-icon
+          ><span>Community</span>
           <v-divider class="my-2" />
           <v-hover v-slot="{ isHovering, props }">
             <a

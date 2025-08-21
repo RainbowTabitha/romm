@@ -95,7 +95,7 @@ async function handleRomUpdate(
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: successMessage,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       romsStore.update(data as SimpleRom);
@@ -107,7 +107,7 @@ async function handleRomUpdate(
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     })
@@ -138,7 +138,7 @@ async function uploadManuals() {
       if (successfulUploads.length == 0) {
         return emitter?.emit("snackbarShow", {
           msg: `All manuals skipped, nothing to upload.`,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "orange",
           timeout: 5000,
         });
@@ -146,7 +146,7 @@ async function uploadManuals() {
 
       emitter?.emit("snackbarShow", {
         msg: `${successfulUploads.length} manuals uploaded successfully (and ${failedUploads.length} skipped/failed).`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 3000,
       });
@@ -156,7 +156,7 @@ async function uploadManuals() {
         msg: `Unable to upload manuals: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -176,7 +176,7 @@ async function updateRom() {
   if (!rom.value?.fs_name) {
     emitter?.emit("snackbarShow", {
       msg: "Cannot save: file name is required",
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
     });
     return;
@@ -200,7 +200,7 @@ function closeDialog() {
     v-if="rom"
     @close="closeDialog"
     v-model="show"
-    icon="mdi-pencil-box"
+    icon="mdiPencilBox"
     scroll-content
     :width="lgAndUp ? '65vw' : '95vw'"
   >
@@ -231,14 +231,14 @@ function closeDialog() {
                       })
                     "
                   >
-                    <v-icon size="large">mdi-image-search-outline</v-icon>
+                    <v-icon size="large" :icon="mdiImageSearchOutline"></v-icon>
                   </v-btn>
                   <v-btn
                     size="small"
                     class="translucent"
                     @click="triggerFileInput('cover-file-input')"
                   >
-                    <v-icon size="large">mdi-pencil</v-icon>
+                    <v-icon size="large" :icon="mdiPencil"></v-icon>
                     <v-file-input
                       id="cover-file-input"
                       v-model="rom.artwork"
@@ -253,9 +253,11 @@ function closeDialog() {
                     class="translucent"
                     @click="removeArtwork"
                   >
-                    <v-icon size="large" class="text-romm-red"
-                      >mdi-delete</v-icon
-                    >
+                    <v-icon
+                      size="large"
+                      class="text-romm-red"
+                      :icon="mdiDelete"
+                    ></v-icon>
                   </v-btn>
                 </v-btn-group>
               </template>
@@ -281,7 +283,7 @@ function closeDialog() {
               <template #details>
                 <v-label class="text-caption text-wrap">
                   <v-icon size="small" class="text-primary mr-2">
-                    mdi-folder-file-outline
+                    mdiFolderFileOutline
                   </v-icon>
                   <span>
                     /romm/library/{{ rom.fs_path }}/{{ rom.fs_name }}
@@ -309,17 +311,17 @@ function closeDialog() {
                 }"
                 >{{ t("rom.manual")
                 }}<v-icon class="ml-1">{{
-                  rom.has_manual ? "mdi-check" : "mdi-close"
+                  rom.has_manual ? "mdiCheck" : "mdiClose"
                 }}</v-icon></span
               >
               <v-btn
                 @click="triggerFileInput('manual-file-input')"
                 class="bg-toplayer ml-3"
-                icon="mdi-cloud-upload-outline"
+                icon="mdiCloudUploadOutline"
                 rounded="0"
                 size="small"
               >
-                <v-icon size="large">mdi-cloud-upload-outline</v-icon>
+                <v-icon size="large" :icon="mdiCloudUploadOutline"></v-icon>
                 <v-file-input
                   id="manual-file-input"
                   v-model="manualFiles"
@@ -334,7 +336,7 @@ function closeDialog() {
             <div v-if="rom.has_manual">
               <v-label class="text-caption text-wrap">
                 <v-icon size="small" class="text-primary mr-2">
-                  mdi-folder-file-outline
+                  mdiFolderFileOutline
                 </v-icon>
                 <span> /romm/resources/{{ rom.path_manual }} </span>
               </v-label>

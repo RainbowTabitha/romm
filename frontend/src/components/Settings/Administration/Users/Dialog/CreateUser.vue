@@ -36,7 +36,7 @@ async function createUser() {
         msg: `Unable to create user: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     });
@@ -57,7 +57,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-account"
+    icon="mdiAccount"
     :width="lgAndUp ? '60vw' : '95vw'"
   >
     <template #content>

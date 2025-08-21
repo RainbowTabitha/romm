@@ -14,15 +14,15 @@ const selectedTheme = ref(isNaN(storedTheme) ? autoThemeKey : storedTheme);
 const themeOptions = computed(() => [
   {
     name: "dark",
-    icon: "mdi-moon-waning-crescent",
+    icon: "mdiMoonWaningCrescent",
   },
   {
     name: "light",
-    icon: "mdi-white-balance-sunny",
+    icon: "mdiWhiteBalanceSunny",
   },
   {
     name: "auto",
-    icon: "mdi-theme-light-dark",
+    icon: "mdiThemeLightDark",
   },
 ]);
 
@@ -37,7 +37,7 @@ function toggleTheme() {
 }
 </script>
 <template>
-  <r-section icon="mdi-brush-variant" :title="t('settings.theme')" class="ma-2">
+  <r-section icon="mdiBrushVariant" :title="t('settings.theme')" class="ma-2">
     <template #content>
       <v-item-group
         v-model="selectedTheme"

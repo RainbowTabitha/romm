@@ -36,7 +36,7 @@ emitter?.on(
           msg: `Unable to get supported platforms: ${
             response?.data?.detail || response?.statusText || message
           }`,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
           timeout: 4000,
         });
@@ -67,7 +67,7 @@ function addBindPlatform() {
     .catch(({ response, message }) => {
       emitter?.emit("snackbarShow", {
         msg: `${response?.data?.detail || response?.statusText || message}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -89,9 +89,9 @@ function closeDialog() {
     <template #header>
       <v-row class="align-center" no-gutters>
         <v-col cols="10">
-          <v-icon icon="mdi-controller" class="ml-5" />
-          <v-icon icon="mdi-menu-right" class="ml-1 text-romm-gray" />
-          <v-icon icon="mdi-controller" class="ml-1 text-primary" />
+          <v-icon icon="mdiController" class="ml-5" />
+          <v-icon icon="mdiMenuRight" class="ml-1 text-romm-gray" />
+          <v-icon icon="mdiController" class="ml-1 text-primary" />
         </v-col>
       </v-row>
     </template>
@@ -107,7 +107,7 @@ function closeDialog() {
             hide-details
           >
             <template #append>
-              <v-icon icon="mdi-menu-right" class="mr-4 text-romm-gray" />
+              <v-icon icon="mdiMenuRight" class="mr-4 text-romm-gray" />
             </template>
           </v-select>
         </v-col>

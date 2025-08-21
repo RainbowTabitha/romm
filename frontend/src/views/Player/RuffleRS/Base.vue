@@ -144,7 +144,7 @@ onMounted(async () => {
             <v-row no-gutters>
               <v-col>
                 <v-card-title class="text-subtitle-1 pa-0 text-uppercase">
-                  <v-icon class="mr-2">mdi-palette</v-icon>
+                  <v-icon class="mr-2" :icon="mdiPalette"></v-icon>
                   {{ t("play.background-color") }}
                 </v-card-title>
               </v-col>
@@ -175,8 +175,8 @@ onMounted(async () => {
                 :color="fullScreenOnPlay ? 'primary' : ''"
                 ><v-icon class="mr-1">{{
                   fullScreenOnPlay
-                    ? "mdi-checkbox-outline"
-                    : "mdi-checkbox-blank-outline"
+                    ? "mdiCheckboxOutline"
+                    : "mdiCheckboxBlankOutline"
                 }}</v-icon
                 >{{ t("play.full-screen") }}</v-btn
               >
@@ -192,7 +192,7 @@ onMounted(async () => {
                 :disabled="gameRunning"
                 variant="outlined"
                 size="large"
-                prepend-icon="mdi-play"
+                prepend-icon="mdiPlay"
                 @click="onPlay"
                 >{{ t("play.play") }}
               </v-btn>
@@ -203,7 +203,7 @@ onMounted(async () => {
               block
               variant="outlined"
               size="large"
-              prepend-icon="mdi-arrow-left"
+              prepend-icon="mdiArrowLeft"
               @click="
                 $router.push({
                   name: ROUTES.ROM,
@@ -216,7 +216,7 @@ onMounted(async () => {
               block
               variant="outlined"
               size="large"
-              prepend-icon="mdi-arrow-left"
+              prepend-icon="mdiArrowLeft"
               @click="
                 $router.push({
                   name: ROUTES.PLATFORM,
@@ -232,7 +232,7 @@ onMounted(async () => {
             block
             variant="outlined"
             size="large"
-            prepend-icon="mdi-exit-to-app"
+            prepend-icon="mdiExitToApp"
             @click="onlyQuit"
           >
             {{ t("play.quit") }}

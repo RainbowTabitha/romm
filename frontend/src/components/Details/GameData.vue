@@ -23,13 +23,13 @@ const { mdAndDown } = useDisplay();
         selected-class="bg-toplayer"
       >
         <v-tab
-          prepend-icon="mdi-content-save"
+          prepend-icon="mdiContentSave"
           class="rounded text-caption"
           value="saves"
           >{{ t("common.saves") }}</v-tab
         >
         <v-tab
-          prepend-icon="mdi-file"
+          prepend-icon="mdiFile"
           class="rounded text-caption"
           value="states"
           >{{ t("common.states") }}</v-tab

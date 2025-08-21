@@ -43,7 +43,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-pencil-box"
+    icon="mdiPencilBox"
     scroll-content
     :width="lgAndUp ? 400 : 400"
   >

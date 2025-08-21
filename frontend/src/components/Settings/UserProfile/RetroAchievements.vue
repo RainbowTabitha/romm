@@ -33,7 +33,7 @@ async function refreshRetroAchievements() {
     .then(() => {
       emitter?.emit("snackbarShow", {
         msg: `RetroAchievements profile synced`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 5000,
       });
@@ -41,7 +41,7 @@ async function refreshRetroAchievements() {
     .catch(() => {
       emitter?.emit("snackbarShow", {
         msg: `Unable to sync your RetroAchievements profile.`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 5000,
       });
@@ -61,7 +61,7 @@ async function submitRACredentials() {
     .then(() => {
       emitter?.emit("snackbarShow", {
         msg: `Updated RetroAchievements settings`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 5000,
       });
@@ -71,7 +71,7 @@ async function submitRACredentials() {
     .catch(() => {
       emitter?.emit("snackbarShow", {
         msg: `Unable to update your RetroAchievements settings.`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 5000,
       });
@@ -87,7 +87,7 @@ watch(
 </script>
 
 <template>
-  <r-section icon="mdi-trophy" title="RetroAchievements">
+  <r-section icon="mdiTrophy" title="RetroAchievements">
     <template #content>
       <v-form v-model="valid" @submit.prevent="submitRACredentials">
         <v-text-field
@@ -98,7 +98,7 @@ watch(
           variant="outlined"
           hide-details
           required
-          prepend-inner-icon="mdi-account"
+          prepend-inner-icon="mdiAccount"
           class="ma-4"
         />
         <v-btn
@@ -109,7 +109,7 @@ watch(
           >{{ t("common.apply") }}</v-btn
         >
         <v-btn
-          prepend-icon="mdi-sync"
+          prepend-icon="mdiSync"
           :disabled="syncing"
           :loading="syncing"
           class="ml-4 text-accent bg-toplayer"

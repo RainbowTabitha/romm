@@ -106,7 +106,7 @@ async function updateCollection() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: "Collection updated successfully",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       currentCollection.value = data;
@@ -117,7 +117,7 @@ async function updateCollection() {
         msg: `Failed to update collection: ${
           error.response?.data?.msg || error.message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     });
@@ -165,18 +165,18 @@ async function updateCollection() {
                     indeterminate
                   />
                 </template>
-                <v-icon>mdi-pencil</v-icon></v-btn
-              >
+                <v-icon :icon="mdiPencil"></v-icon
+              ></v-btn>
               <template v-else>
                 <v-btn @click="closeEditable" size="small" class="bg-toplayer"
-                  ><v-icon color="romm-red">mdi-close</v-icon></v-btn
-                >
+                  ><v-icon color="romm-red" :icon="mdiClose"></v-icon
+                ></v-btn>
                 <v-btn
                   @click="updateCollection"
                   size="small"
                   class="bg-toplayer ml-1"
-                  ><v-icon color="romm-green">mdi-check</v-icon></v-btn
-                >
+                  ><v-icon color="romm-green" :icon="mdiCheck"></v-icon
+                ></v-btn>
               </template>
             </template>
           </div>
@@ -203,7 +203,7 @@ async function updateCollection() {
                     })
                   "
                 >
-                  <v-icon size="large">mdi-image-search-outline</v-icon>
+                  <v-icon size="large" :icon="mdiImageSearchOutline"></v-icon>
                 </v-btn>
                 <v-btn
                   title="Upload custom cover"
@@ -211,7 +211,7 @@ async function updateCollection() {
                   class="translucent"
                   @click="triggerFileInput"
                 >
-                  <v-icon size="large">mdi-cloud-upload-outline</v-icon>
+                  <v-icon size="large" :icon="mdiCloudUploadOutline"></v-icon>
                   <v-file-input
                     id="file-input"
                     v-model="updatedCollection.artwork"
@@ -227,7 +227,11 @@ async function updateCollection() {
                   class="translucent"
                   @click="removeArtwork"
                 >
-                  <v-icon size="large" class="text-romm-red">mdi-delete</v-icon>
+                  <v-icon
+                    size="large"
+                    class="text-romm-red"
+                    :icon="mdiDelete"
+                  ></v-icon>
                 </v-btn>
               </v-btn-group>
             </template>
@@ -252,7 +256,7 @@ async function updateCollection() {
               size="small"
               :color="currentCollection.is_public ? 'primary' : ''"
               ><v-icon class="mr-1">{{
-                currentCollection.is_public ? "mdi-lock-open" : "mdi-lock"
+                currentCollection.is_public ? "mdiLockOpen" : "mdiLock"
               }}</v-icon
               >{{
                 currentCollection.is_public
@@ -286,8 +290,8 @@ async function updateCollection() {
               class="mt-2"
               v-model="updatedCollection.is_public"
               color="primary"
-              false-icon="mdi-lock"
-              true-icon="mdi-lock-open"
+              false-icon="mdiLock"
+              true-icon="mdiLockOpen"
               inset
               hide-details
               :label="
@@ -327,7 +331,7 @@ async function updateCollection() {
         auth.scopes.includes('collections.write') &&
         currentCollection.user__username === auth.user?.username
       "
-      icon="mdi-alert"
+      icon="mdiAlert"
       icon-color="red"
       :title="t('collection.danger-zone')"
       elevation="0"
@@ -344,7 +348,7 @@ async function updateCollection() {
               emitter?.emit('showDeleteCollectionDialog', currentCollection)
             "
           >
-            <v-icon class="text-romm-red mr-2">mdi-delete</v-icon>
+            <v-icon class="text-romm-red mr-2" :icon="mdiDelete"></v-icon>
             {{ t("collection.delete-collection") }}
           </v-btn>
         </div>

@@ -23,8 +23,10 @@ function setUnmatched() {
     :color="filterUnmatched ? 'primary' : ''"
     @click="setUnmatched"
   >
-    <v-icon :color="filterUnmatched ? 'primary' : ''"
-      >mdi-file-find-outline</v-icon
+    <v-icon
+      :color="filterUnmatched ? 'primary' : ''"
+      :icon="mdiFileFindOutline"
+    ></v-icon
     ><span
       class="ml-2"
       :class="{

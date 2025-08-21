@@ -8,7 +8,7 @@ defineProps<{ rom: DetailedRom }>();
   <!-- TODO: user screenshots -->
   <!-- <v-carousel
     hide-delimiter-background
-    delimiter-icon="mdi-square"
+    delimiter-icon="mdiSquare"
     class="bg-romm-black"
     show-arrows="hover"
     :height="xs ? '200' : '350'"

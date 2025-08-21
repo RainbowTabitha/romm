@@ -44,7 +44,7 @@ function run() {
     .then(() => {
       emitter?.emit("snackbarShow", {
         msg: `Task '${props.title}' ran successfully!`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
     })
@@ -52,7 +52,7 @@ function run() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     })
@@ -87,7 +87,7 @@ function run() {
           :loading="isTaskRunning"
           @click="run"
         >
-          <v-icon>mdi-play</v-icon>
+          <v-icon :icon="mdiPlay"></v-icon>
         </v-btn>
       </v-col>
     </v-row>

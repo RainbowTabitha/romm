@@ -49,7 +49,7 @@ emitter?.on("showUploadRomDialog", (platformWhereUpload) => {
     .catch(({ response, message }) => {
       emitter?.emit("snackbarShow", {
         msg: `Unable to upload roms: ${response?.data?.detail || response?.statusText || message}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -66,7 +66,7 @@ async function uploadRoms() {
       .then(({ data }) => {
         emitter?.emit("snackbarShow", {
           msg: `Platform ${selectedPlatform.value?.name} created successfully!`,
-          icon: "mdi-check-bold",
+          icon: "mdiCheckBold",
           color: "green",
           timeout: 2000,
         });
@@ -76,7 +76,7 @@ async function uploadRoms() {
         console.log(error);
         emitter?.emit("snackbarShow", {
           msg: error.response.data.detail,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
         });
         return;
@@ -106,7 +106,7 @@ async function uploadRoms() {
       if (successfulUploads.length == 0) {
         return emitter?.emit("snackbarShow", {
           msg: `All files skipped, nothing to upload.`,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "orange",
           timeout: 5000,
         });
@@ -114,7 +114,7 @@ async function uploadRoms() {
 
       emitter?.emit("snackbarShow", {
         msg: `${successfulUploads.length} files uploaded successfully (and ${failedUploads.length} skipped/failed). Starting scan...`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 3000,
       });
@@ -133,7 +133,7 @@ async function uploadRoms() {
     .catch(({ response, message }) => {
       emitter?.emit("snackbarShow", {
         msg: `Unable to upload roms: ${response?.data?.detail || response?.statusText || message}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -164,7 +164,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-cloud-upload-outline"
+    icon="mdiCloudUploadOutline"
     :width="mdAndUp ? '50vw' : '95vw'"
     scroll-content
   >
@@ -222,7 +222,7 @@ function closeDialog() {
             rounded="0"
             @click="triggerFileInput"
           >
-            <v-icon :class="{ 'mr-2': !xs }"> mdi-plus </v-icon
+            <v-icon :class="{ 'mr-2': !xs }"> mdiPlus </v-icon
             ><span v-if="!xs">{{ t("common.add") }}</span>
           </v-btn>
           <v-file-input
@@ -268,7 +268,7 @@ function closeDialog() {
         <template #item.actions="{ item }">
           <v-btn-group divided density="compact">
             <v-btn @click="removeRomFromList(item.name)">
-              <v-icon class="text-romm-red"> mdi-close </v-icon>
+              <v-icon class="text-romm-red"> mdiClose </v-icon>
             </v-btn>
           </v-btn-group>
         </template>

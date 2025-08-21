@@ -27,7 +27,7 @@ async function switchFromFavourites() {
         favoriteCollection.value = data;
         emitter?.emit("snackbarShow", {
           msg: `Collection ${data.name} created successfully!`,
-          icon: "mdi-check-bold",
+          icon: "mdiCheckBold",
           color: "green",
           timeout: 2000,
         });
@@ -36,7 +36,7 @@ async function switchFromFavourites() {
         console.log(error);
         emitter?.emit("snackbarShow", {
           msg: error.response.data.detail,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
         });
         return;
@@ -60,7 +60,7 @@ async function switchFromFavourites() {
         msg: `${props.rom.name} ${
           collectionsStore.isFavorite(props.rom) ? "added to" : "removed from"
         } ${favoriteCollection.value?.name} successfully!`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -71,7 +71,7 @@ async function switchFromFavourites() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -91,7 +91,7 @@ async function switchFromFavourites() {
     size="small"
     variant="text"
     ><v-icon color="primary">{{
-      collectionsStore.isFavorite(rom) ? "mdi-star" : "mdi-star-outline"
+      collectionsStore.isFavorite(rom) ? "mdiStar" : "mdiStarOutline"
     }}</v-icon></v-btn
   >
 </template>

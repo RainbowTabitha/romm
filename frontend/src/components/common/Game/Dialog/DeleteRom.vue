@@ -47,7 +47,7 @@ async function deleteRoms() {
         msg: romsToDeleteFromFs.value
           ? `${response.data.successful_items} roms deleted from filesystem`
           : `${response.data.successful_items} roms deleted from RomM`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       if (excludeOnDelete.value) {
@@ -92,7 +92,7 @@ async function deleteRoms() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -110,7 +110,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     scroll-content
     :width="mdAndUp ? '50vw' : '95vw'"
   >
@@ -158,9 +158,7 @@ function closeDialog() {
         <v-col>
           <v-chip @click="excludeOnDelete = !excludeOnDelete" variant="text"
             ><v-icon :color="excludeOnDelete ? 'accent' : ''" class="mr-1">{{
-              excludeOnDelete
-                ? "mdi-checkbox-outline"
-                : "mdi-checkbox-blank-outline"
+              excludeOnDelete ? "mdiCheckboxOutline" : "mdiCheckboxBlankOutline"
             }}</v-icon>
             {{ t("common.exclude-on-delete") }}
           </v-chip>

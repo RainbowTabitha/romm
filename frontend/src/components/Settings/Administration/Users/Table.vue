@@ -66,7 +66,7 @@ function disableUser(user: User) {
       msg: `Unable to disable/enable user: ${
         response?.data?.detail || response?.statusText || message
       }`,
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
       timeout: 5000,
     });
@@ -86,11 +86,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <r-section icon="mdi-account" title="Users" class="ma-2">
+  <r-section icon="mdiAccount" title="Users" class="ma-2">
     <template #content>
       <v-text-field
         v-model="userSearch"
-        prepend-inner-icon="mdi-magnify"
+        prepend-inner-icon="mdiMagnify"
         label="Search"
         single-line
         hide-details
@@ -114,7 +114,7 @@ onMounted(() => {
         <template #header.actions>
           <v-btn-group divided density="compact">
             <v-btn
-              prepend-icon="mdi-plus"
+              prepend-icon="mdiPlus"
               variant="outlined"
               class="text-primary"
               @click="emitter?.emit('showCreateUserDialog', null)"
@@ -122,7 +122,7 @@ onMounted(() => {
               {{ t("common.add") }}
             </v-btn>
             <v-btn
-              prepend-icon="mdi-share"
+              prepend-icon="mdiShare"
               variant="outlined"
               class="text-primary"
               @click="emitter?.emit('showCreateInviteLinkDialog')"
@@ -173,14 +173,14 @@ onMounted(() => {
               :title="t('settings.edit-user')"
               @click="emitter?.emit('showEditUserDialog', item)"
             >
-              <v-icon>mdi-pencil</v-icon>
+              <v-icon :icon="mdiPencil"></v-icon>
             </v-btn>
             <v-btn
               class="text-romm-red"
               size="small"
               @click="emitter?.emit('showDeleteUserDialog', item)"
             >
-              <v-icon>mdi-delete</v-icon>
+              <v-icon :icon="mdiDelete"></v-icon>
             </v-btn>
           </v-btn-group>
         </template>

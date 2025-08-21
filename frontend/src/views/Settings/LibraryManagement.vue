@@ -93,7 +93,7 @@ async function fetchRoms() {
       console.error("Error fetching missing games:", error);
       emitter?.emit("snackbarShow", {
         msg: `Couldn't fetch missing ROMs: ${error}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -121,7 +121,7 @@ function cleanupAll() {
       } else {
         emitter?.emit("snackbarShow", {
           msg: "No missing ROMs to delete",
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
           timeout: 4000,
         });
@@ -131,7 +131,7 @@ function cleanupAll() {
       console.error("Error fetching missing games:", error);
       emitter?.emit("snackbarShow", {
         msg: `Couldn't fetch missing ROMs: ${error}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -181,13 +181,10 @@ onBeforeUnmount(() => {
         slider-color="secondary"
         selected-class="bg-toplayer"
       >
-        <v-tab prepend-icon="mdi-cog" class="rounded" value="config"
+        <v-tab prepend-icon="mdiCog" class="rounded" value="config"
           >Config</v-tab
         >
-        <v-tab
-          prepend-icon="mdi-folder-question"
-          class="rounded"
-          value="missing"
+        <v-tab prepend-icon="mdiFolderQuestion" class="rounded" value="missing"
           >Missing games</v-tab
         >
       </v-tabs>
@@ -206,7 +203,7 @@ onBeforeUnmount(() => {
                 class="mx-2"
                 v-model="selectedPlatform"
                 hide-details
-                prepend-inner-icon="mdi-controller"
+                prepend-inner-icon="mdiController"
                 clearable
                 :label="t('common.platform')"
                 variant="outlined"
@@ -260,7 +257,7 @@ onBeforeUnmount(() => {
             </v-col>
             <v-col cols="auto">
               <v-btn
-                prepend-icon="mdi-delete"
+                prepend-icon="mdiDelete"
                 size="large"
                 class="text-romm-red bg-toplayer"
                 variant="flat"

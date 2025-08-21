@@ -284,7 +284,7 @@ onBeforeUnmount(async () => {
             hide-details
             variant="outlined"
             density="compact"
-            prepend-inner-icon="mdi-disc"
+            prepend-inner-icon="mdiDisc"
             clearable
             :label="t('rom.file')"
             :items="
@@ -301,7 +301,7 @@ onBeforeUnmount(async () => {
             v-model="selectedCore"
             hide-details
             variant="outlined"
-            prepend-inner-icon="mdi-chip"
+            prepend-inner-icon="mdiChip"
             density="compact"
             clearable
             :label="t('common.core')"
@@ -320,7 +320,7 @@ onBeforeUnmount(async () => {
             hide-details
             variant="outlined"
             density="compact"
-            prepend-inner-icon="mdi-memory"
+            prepend-inner-icon="mdiMemory"
             clearable
             :label="t('common.firmware')"
             :items="
@@ -347,7 +347,7 @@ onBeforeUnmount(async () => {
                   block
                   variant="flat"
                   class="asset-selector"
-                  prepend-icon="mdi-file"
+                  prepend-icon="mdiFile"
                   :color="openStateSelector ? 'primary' : ''"
                   @click="switchStateSelector"
                   :disabled="
@@ -415,7 +415,7 @@ onBeforeUnmount(async () => {
                                 icon
                                 @click="unselectState"
                               >
-                                <v-icon>mdi-close-circle-outline</v-icon>
+                                <v-icon :icon="mdiCloseCircleOutline"></v-icon>
                               </v-btn>
                             </v-col>
                           </v-row>
@@ -441,7 +441,7 @@ onBeforeUnmount(async () => {
                   block
                   variant="flat"
                   class="asset-selector"
-                  prepend-icon="mdi-content-save"
+                  prepend-icon="mdiContentSave"
                   :color="openSaveSelector ? 'primary' : ''"
                   @click="switchSaveSelector"
                 >
@@ -500,7 +500,7 @@ onBeforeUnmount(async () => {
                                 icon
                                 @click="unselectSave"
                               >
-                                <v-icon>mdi-close-circle-outline</v-icon>
+                                <v-icon :icon="mdiCloseCircleOutline"></v-icon>
                               </v-btn>
                             </v-col>
                           </v-row>
@@ -672,13 +672,13 @@ onBeforeUnmount(async () => {
               @click="onFullScreenChange"
               variant="flat"
               :append-icon="
-                fullScreenOnPlay ? 'mdi-fullscreen' : 'mdi-fullscreen-exit'
+                fullScreenOnPlay ? 'mdiFullscreen' : 'mdiFullscreenExit'
               "
               :color="fullScreenOnPlay ? 'primary' : ''"
               ><v-icon class="mr-2">{{
                 fullScreenOnPlay
-                  ? "mdi-checkbox-outline"
-                  : "mdi-checkbox-blank-outline"
+                  ? "mdiCheckboxOutline"
+                  : "mdiCheckboxBlankOutline"
               }}</v-icon
               >{{ t("play.full-screen") }}</v-btn
             >
@@ -691,7 +691,7 @@ onBeforeUnmount(async () => {
               block
               variant="flat"
               class="text-primary"
-              prepend-icon="mdi-play"
+              prepend-icon="mdiPlay"
               @click="onPlay"
               >{{ t("play.play") }}
             </v-btn>
@@ -705,8 +705,8 @@ onBeforeUnmount(async () => {
             <v-btn
               block
               variant="flat"
-              prepend-icon="mdi-arrow-left"
-              append-icon="mdi-details"
+              prepend-icon="mdiArrowLeft"
+              append-icon="mdiDetails"
               @click="
                 $router.push({
                   name: ROUTES.ROM,
@@ -723,8 +723,8 @@ onBeforeUnmount(async () => {
             <v-btn
               block
               variant="flat"
-              prepend-icon="mdi-arrow-left"
-              append-icon="mdi-apps"
+              prepend-icon="mdiArrowLeft"
+              append-icon="mdiApps"
               @click="
                 $router.push({
                   name: ROUTES.PLATFORM,
@@ -741,7 +741,7 @@ onBeforeUnmount(async () => {
           :class="{ 'mt-2': gameRunning || smAndDown, 'pr-1': !smAndDown }"
           block
           variant="flat"
-          prepend-icon="mdi-exit-to-app"
+          prepend-icon="mdiExitToApp"
           @click="onlyQuit"
         >
           {{ t("play.quit") }}
@@ -750,7 +750,7 @@ onBeforeUnmount(async () => {
           :class="{ 'mt-2': gameRunning || smAndDown, 'pl-1': !smAndDown }"
           block
           variant="flat"
-          prepend-icon="mdi-content-save-move"
+          prepend-icon="mdiContentSaveMove"
           @click="saveAndQuit"
         >
           {{ t("play.save-and-quit") }}

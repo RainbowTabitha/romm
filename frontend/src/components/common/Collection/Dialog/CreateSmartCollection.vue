@@ -50,7 +50,7 @@ emitter?.on("showCreateSmartCollectionDialog", () => {
   if (!hasFilters.value) {
     emitter?.emit("snackbarShow", {
       msg: "Please apply some filters before creating a smart collection",
-      icon: "mdi-information",
+      icon: "mdiInformation",
       color: "warning",
     });
     return;
@@ -101,7 +101,7 @@ async function createSmartCollection() {
   if (!name.value.trim()) {
     emitter?.emit("snackbarShow", {
       msg: "Please enter a name for the smart collection",
-      icon: "mdi-alert",
+      icon: "mdiAlert",
       color: "error",
     });
     return;
@@ -153,7 +153,7 @@ async function createSmartCollection() {
 
     emitter?.emit("snackbarShow", {
       msg: `Smart collection "${name.value}" created successfully!`,
-      icon: "mdi-check-circle",
+      icon: "mdiCheckCircle",
       color: "green",
     });
     collectionsStore.addSmartCollection(data);
@@ -167,7 +167,7 @@ async function createSmartCollection() {
     console.error("Failed to create smart collection:", error);
     emitter?.emit("snackbarShow", {
       msg: error.response?.data?.detail || "Failed to create smart collection",
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
     });
   }
@@ -178,7 +178,7 @@ async function createSmartCollection() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-playlist-plus"
+    icon="mdiPlaylistPlus"
     :width="mdAndUp ? '45vw' : '95vw'"
   >
     <template #header>
@@ -228,7 +228,7 @@ async function createSmartCollection() {
             <v-col class="filters-preview">
               <v-card variant="outlined" class="h-100">
                 <v-card-title class="text-subtitle-1">
-                  <v-icon class="mr-2">mdi-filter</v-icon>
+                  <v-icon class="mr-2" :icon="mdiFilter"></v-icon>
                   {{ t("collection.current-filters") }}
                 </v-card-title>
                 <v-card-text>

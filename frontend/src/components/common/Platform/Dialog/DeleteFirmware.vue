@@ -47,7 +47,7 @@ async function deleteFirmware() {
       }
       emitter?.emit("snackbarShow", {
         msg: "Firmware deleted successfully!",
-        icon: "mdi-check-circle",
+        icon: "mdiCheckCircle",
         color: "green",
         timeout: 4000,
       });
@@ -56,7 +56,7 @@ async function deleteFirmware() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -75,7 +75,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     scroll-content
     :width="mdAndUp ? '60vw' : '95vw'"
   >

@@ -28,7 +28,7 @@ function setRA() {
     @click="setRA"
     :disabled="fetchTotalRoms > 10000"
   >
-    <v-icon :color="filterRA ? 'primary' : ''"> mdi-trophy </v-icon>
+    <v-icon :color="filterRA ? 'primary' : ''"> mdiTrophy </v-icon>
     <span
       class="ml-2"
       :class="{

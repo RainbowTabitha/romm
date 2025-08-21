@@ -48,7 +48,7 @@ function onClosedMenu() {
 }
 </script>
 <template>
-  <r-section icon="mdi-shimmer" :title="t('home.recently-added')">
+  <r-section icon="mdiShimmer" :title="t('home.recently-added')">
     <template #toolbar-append>
       <v-btn
         aria-label="Toggle recently games added grid view"
@@ -56,7 +56,7 @@ function onClosedMenu() {
         rounded="0"
         @click="toggleGridRecentRoms"
         ><v-icon>{{
-          gridRecentRoms ? "mdi-view-comfy" : "mdi-view-column"
+          gridRecentRoms ? "mdiViewComfy" : "mdiViewColumn"
         }}</v-icon>
       </v-btn>
     </template>

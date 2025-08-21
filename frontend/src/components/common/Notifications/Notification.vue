@@ -44,7 +44,7 @@ function closeDialog() {
     </template>
     <template #actions>
       <v-btn variant="text" @click="closeDialog">
-        <v-icon icon="mdi-close" />
+        <v-icon icon="mdiClose" />
       </v-btn>
     </template>
   </v-snackbar>

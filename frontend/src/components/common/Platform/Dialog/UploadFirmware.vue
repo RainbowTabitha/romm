@@ -46,7 +46,7 @@ function uploadFirmware() {
 
   emitter?.emit("snackbarShow", {
     msg: `Uploading ${filesToUpload.value.length} states to ${currentPlatform.value.name}...`,
-    icon: "mdi-loading mdi-spin",
+    icon: "mdiLoading mdiSpin",
     color: "primary",
   });
 
@@ -63,7 +63,7 @@ function uploadFirmware() {
 
       emitter?.emit("snackbarShow", {
         msg: `${uploaded} files uploaded successfully.`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -88,7 +88,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-memory"
+    icon="mdiMemory"
     empty-state-type="firmware"
     scroll-content
     :width="mdAndUp ? '50vw' : '95vw'"
@@ -134,7 +134,7 @@ function closeDialog() {
           <template #item.actions="{ item }">
             <v-btn-group divided density="compact">
               <v-btn @click="removeFileFromFileInput(item.name)">
-                <v-icon class="text-romm-red"> mdi-close </v-icon>
+                <v-icon class="text-romm-red"> mdiClose </v-icon>
               </v-btn>
             </v-btn-group>
           </template>

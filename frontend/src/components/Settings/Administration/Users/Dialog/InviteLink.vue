@@ -25,7 +25,7 @@ function createInviteLink() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: "Invite link created",
-        icon: "mdi-check-circle",
+        icon: "mdiCheckCircle",
         color: "green",
         timeout: 5000,
       });
@@ -36,7 +36,7 @@ function createInviteLink() {
         msg: `Unable to create invite link: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 5000,
       });
@@ -51,7 +51,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-share"
+    icon="mdiShare"
     :width="lgAndUp ? '60vw' : '95vw'"
   >
     <template #content>
@@ -73,7 +73,7 @@ function closeDialog() {
             variant="outlined"
             @click="createInviteLink"
           >
-            <v-icon size="small" class="mr-2">mdi-link</v-icon>Generate
+            <v-icon size="small" class="mr-2" :icon="mdiLink"></v-icon>Generate
           </v-btn>
         </v-btn-toggle>
       </v-row>

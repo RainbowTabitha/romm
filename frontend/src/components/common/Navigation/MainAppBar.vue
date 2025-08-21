@@ -87,9 +87,7 @@ function collapse() {
         rounded
         icon
         ><v-icon>{{
-          mainBarCollapsed
-            ? "mdi-chevron-double-right"
-            : "mdi-chevron-double-left"
+          mainBarCollapsed ? "mdiChevronDoubleRight" : "mdiChevronDoubleLeft"
         }}</v-icon></v-btn
       >
     </v-row>

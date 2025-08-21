@@ -28,7 +28,7 @@ function setDuplicates() {
     :disabled="fetchTotalRoms > 10000"
   >
     <v-icon :color="filterDuplicates ? 'primary' : ''">
-      mdi-card-multiple
+      mdiCardMultiple
     </v-icon>
     <span
       class="ml-2"

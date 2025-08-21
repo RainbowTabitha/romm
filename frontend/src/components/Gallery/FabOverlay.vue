@@ -46,7 +46,7 @@ async function onScan() {
   const romCount = romsStore.selectedRoms.length;
   emitter?.emit("snackbarShow", {
     msg: `Scanning ${romCount} game${romCount > 1 ? "s" : ""}...`,
-    icon: "mdi-loading mdi-spin",
+    icon: "mdiLoading mdiSpin",
     color: "primary",
   });
 
@@ -78,7 +78,7 @@ async function addToFavourites() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: "Roms added to favourites successfully!",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -87,7 +87,7 @@ async function addToFavourites() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -110,7 +110,7 @@ async function removeFromFavourites() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: "Roms removed from favourites successfully!",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -121,7 +121,7 @@ async function removeFromFavourites() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -171,7 +171,7 @@ async function onDownload() {
         key="1"
         color="toplayer"
         elevation="8"
-        icon="mdi-select"
+        icon="mdiSelect"
         class="rounded"
         :size="35"
         rounded="0"
@@ -182,7 +182,7 @@ async function onDownload() {
         key="2"
         color="toplayer"
         elevation="8"
-        icon="mdi-select-all"
+        icon="mdiSelectAll"
         class="rounded"
         :size="35"
         rounded="0"
@@ -193,7 +193,7 @@ async function onDownload() {
         key="3"
         color="toplayer"
         elevation="8"
-        icon="mdi-star"
+        icon="mdiStar"
         class="rounded"
         :size="35"
         rounded="0"
@@ -204,7 +204,7 @@ async function onDownload() {
         key="4"
         color="toplayer"
         elevation="8"
-        icon="mdi-star-remove-outline"
+        icon="mdiStarRemoveOutline"
         class="rounded"
         :size="35"
         rounded="0"
@@ -215,7 +215,7 @@ async function onDownload() {
         key="5"
         color="toplayer"
         elevation="8"
-        icon="mdi-bookmark-plus"
+        icon="mdiBookmarkPlus"
         class="rounded"
         :size="35"
         rounded="0"
@@ -228,7 +228,7 @@ async function onDownload() {
         key="6"
         color="toplayer"
         elevation="8"
-        icon="mdi-bookmark-remove-outline"
+        icon="mdiBookmarkRemoveOutline"
         class="rounded"
         :size="35"
         rounded="0"
@@ -244,7 +244,7 @@ async function onDownload() {
         key="7"
         color="toplayer"
         elevation="8"
-        icon="mdi-download"
+        icon="mdiDownload"
         class="rounded"
         :size="35"
         rounded="0"
@@ -256,7 +256,7 @@ async function onDownload() {
         v-if="auth.scopes.includes('roms.write')"
         color="toplayer"
         elevation="8"
-        icon="mdi-magnify-scan"
+        icon="mdiMagnifyScan"
         class="rounded"
         :size="35"
         rounded="0"
@@ -274,7 +274,7 @@ async function onDownload() {
         rounded="0"
         @click="emitter?.emit('showDeleteRomDialog', romsStore.selectedRoms)"
       >
-        <v-icon color="romm-red"> mdi-delete </v-icon>
+        <v-icon color="romm-red"> mdiDelete </v-icon>
       </v-btn>
     </v-speed-dial>
   </div>
@@ -299,8 +299,8 @@ async function onDownload() {
         :size="40"
         rounded="0"
         @click="scrollToTop"
-        ><v-icon color="primary">mdi-chevron-up</v-icon></v-btn
-      >
+        ><v-icon color="primary" :icon="mdiChevronUp"></v-icon
+      ></v-btn>
     </v-scroll-y-reverse-transition>
   </div>
 </template>

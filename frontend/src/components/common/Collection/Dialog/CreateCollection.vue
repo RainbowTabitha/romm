@@ -80,7 +80,7 @@ async function createCollection() {
 
     emitter?.emit("snackbarShow", {
       msg: `Collection ${data.name} created successfully!`,
-      icon: "mdi-check-bold",
+      icon: "mdiCheckBold",
       color: "green",
       timeout: 2000,
     });
@@ -95,7 +95,7 @@ async function createCollection() {
     console.log(error);
     emitter?.emit("snackbarShow", {
       msg: error.response.data.detail,
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
     });
   }
@@ -112,7 +112,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-bookmark-box-multiple"
+    icon="mdiBookmarkBoxMultiple"
     :width="mdAndUp ? '45vw' : '95vw'"
   >
     <template #header>
@@ -184,14 +184,17 @@ function closeDialog() {
                         })
                       "
                     >
-                      <v-icon size="large">mdi-image-search-outline</v-icon>
+                      <v-icon
+                        size="large"
+                        :icon="mdiImageSearchOutline"
+                      ></v-icon>
                     </v-btn>
                     <v-btn
                       size="small"
                       class="translucent"
                       @click="triggerFileInput"
                     >
-                      <v-icon size="large">mdi-pencil</v-icon>
+                      <v-icon size="large" :icon="mdiPencil"></v-icon>
                       <v-file-input
                         id="file-input"
                         v-model="collection.artwork"
@@ -206,9 +209,11 @@ function closeDialog() {
                       class="translucent"
                       @click="removeArtwork"
                     >
-                      <v-icon size="large" class="text-romm-red"
-                        >mdi-delete</v-icon
-                      >
+                      <v-icon
+                        size="large"
+                        class="text-romm-red"
+                        :icon="mdiDelete"
+                      ></v-icon>
                     </v-btn>
                   </v-btn-group>
                 </template>

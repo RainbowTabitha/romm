@@ -50,7 +50,7 @@ function onClosedMenu() {
 }
 </script>
 <template>
-  <r-section icon="mdi-play" :title="t('home.continue-playing')">
+  <r-section icon="mdiPlay" :title="t('home.continue-playing')">
     <template #toolbar-append>
       <v-btn
         aria-label="Toggle continue playing games grid view"
@@ -58,7 +58,7 @@ function onClosedMenu() {
         rounded="0"
         @click="toggleGridContinuePlaying"
         ><v-icon>{{
-          gridContinuePlayingRoms ? "mdi-view-comfy" : "mdi-view-column"
+          gridContinuePlayingRoms ? "mdiViewComfy" : "mdiViewColumn"
         }}</v-icon>
       </v-btn>
     </template>

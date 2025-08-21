@@ -139,7 +139,7 @@ const hashMatches = computed(() => {
             <span>{{ rom.igdb_id }}</span>
             <v-divider class="mx-2 border-opacity-25" vertical />
             <span>{{ rom.igdb_metadata?.total_rating }}</span>
-            <v-icon class="ml-1">mdi-star</v-icon>
+            <v-icon class="ml-1" :icon="mdiStar"></v-icon>
           </v-chip>
         </a>
         <a
@@ -169,7 +169,7 @@ const hashMatches = computed(() => {
               <span>{{
                 (parseFloat(rom.moby_metadata.moby_score) * 10).toFixed(2)
               }}</span>
-              <v-icon class="ml-1">mdi-star</v-icon>
+              <v-icon class="ml-1" :icon="mdiStar"></v-icon>
             </template>
           </v-chip>
         </a>
@@ -195,7 +195,7 @@ const hashMatches = computed(() => {
               <span>{{
                 (parseFloat(rom.ss_metadata.ss_score) * 10).toFixed(2)
               }}</span>
-              <v-icon class="ml-1">mdi-star</v-icon>
+              <v-icon class="ml-1" :icon="mdiStar"></v-icon>
             </template>
           </v-chip>
         </a>
@@ -226,7 +226,7 @@ const hashMatches = computed(() => {
               <span>{{
                 (rom.launchbox_metadata.community_rating * 20).toFixed(2)
               }}</span>
-              <v-icon class="ml-1">mdi-star</v-icon>
+              <v-icon class="ml-1" :icon="mdiStar"></v-icon>
             </template>
           </v-chip>
         </a>
@@ -299,7 +299,7 @@ const hashMatches = computed(() => {
           title="Verified with Hasheous"
         >
           <v-avatar class="bg-romm-green" size="30" rounded="0">
-            <v-icon>mdi-check-decagram-outline</v-icon>
+            <v-icon :icon="mdiCheckDecagramOutline"></v-icon>
           </v-avatar>
           <span class="ml-2">{{ hash.name }}</span>
         </v-chip>

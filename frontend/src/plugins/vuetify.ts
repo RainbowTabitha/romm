@@ -2,7 +2,6 @@ import { createVuetify } from "vuetify";
 import { themes, dark, light, autoThemeKey } from "@/styles/themes";
 import { isKeyof } from "@/types";
 import "vuetify/styles";
-import "@mdi/font/css/materialdesignicons.css";
 
 const mediaMatch = window.matchMedia("(prefers-color-scheme: dark)");
 mediaMatch.addEventListener("change", (event) => {

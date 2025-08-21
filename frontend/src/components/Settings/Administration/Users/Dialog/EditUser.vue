@@ -51,7 +51,7 @@ function editUser() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: `User ${data.username} updated successfully`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 5000,
       });
@@ -65,7 +65,7 @@ function editUser() {
         msg: `Unable to edit user: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 5000,
       });
@@ -85,7 +85,7 @@ function closeDialog() {
     v-if="user"
     @close="closeDialog"
     v-model="show"
-    icon="mdi-pencil-box"
+    icon="mdiPencilBox"
     :width="lgAndUp ? '45vw' : '95vw'"
   >
     <template #header>
@@ -165,7 +165,7 @@ function closeDialog() {
                         class="d-flex translucent cursor-pointer h-100 align-center justify-center text-h4"
                         @click="triggerFileInput"
                       >
-                        <v-icon>mdi-pencil</v-icon>
+                        <v-icon :icon="mdiPencil"></v-icon>
                       </div>
                     </v-fade-transition>
                     <v-file-input
@@ -173,7 +173,7 @@ function closeDialog() {
                       v-model="user.avatar"
                       class="file-input text-truncate"
                       label="Avatar"
-                      prepend-inner-icon="mdi-image"
+                      prepend-inner-icon="mdiImage"
                       prepend-icon=""
                       variant="outlined"
                       @change="previewImage"

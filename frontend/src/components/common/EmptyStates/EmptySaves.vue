@@ -7,7 +7,7 @@ const { t } = useI18n();
 <template>
   <v-row class="text-center">
     <v-col>
-      <v-icon size="large">mdi-help-rhombus-outline</v-icon>
+      <v-icon size="large" :icon="mdiHelpRhombusOutline"></v-icon>
       <p class="text-h6 mt-2">{{ t("rom.no-saves-found") }}</p>
     </v-col>
   </v-row>

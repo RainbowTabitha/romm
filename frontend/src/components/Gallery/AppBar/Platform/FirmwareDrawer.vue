@@ -83,7 +83,7 @@ function deleteSelectedFirmware() {
             :tabindex="tabIndex"
             @click="emitter?.emit('addFirmwareDialog', null)"
           >
-            <v-icon>mdi-cloud-upload-outline</v-icon>
+            <v-icon :icon="mdiCloudUploadOutline"></v-icon>
           </v-btn>
           <v-btn
             :disabled="!selectedFirmware.length"
@@ -92,7 +92,7 @@ function deleteSelectedFirmware() {
             :variant="selectedFirmware.length > 0 ? 'flat' : 'plain'"
             @click="downloadSelectedFirmware"
           >
-            <v-icon>mdi-download</v-icon>
+            <v-icon :icon="mdiDownload"></v-icon>
           </v-btn>
           <v-btn
             v-if="auth.scopes.includes('platforms.write')"
@@ -105,7 +105,7 @@ function deleteSelectedFirmware() {
             :variant="selectedFirmware.length > 0 ? 'flat' : 'plain'"
             @click="deleteSelectedFirmware"
           >
-            <v-icon>mdi-delete</v-icon>
+            <v-icon :icon="mdiDelete"></v-icon>
           </v-btn>
         </v-btn-group>
       </template>
@@ -138,7 +138,7 @@ function deleteSelectedFirmware() {
               <v-chip
                 v-if="item.is_verified"
                 label
-                prepend-icon="mdi-check"
+                prepend-icon="mdiCheck"
                 size="x-small"
                 tabindex="-1"
                 class="text-romm-green"
@@ -165,7 +165,7 @@ function deleteSelectedFirmware() {
               <v-chip
                 v-if="item.is_verified"
                 label
-                prepend-icon="mdi-check"
+                prepend-icon="mdiCheck"
                 size="x-small"
                 tabindex="-1"
                 class="text-romm-green ml-1"
@@ -187,7 +187,7 @@ function deleteSelectedFirmware() {
             size="small"
             :tabindex="tabIndex"
           >
-            <v-icon> mdi-download </v-icon>
+            <v-icon> mdiDownload </v-icon>
           </v-btn>
           <v-btn
             v-if="auth.scopes.includes('platforms.write')"
@@ -195,7 +195,7 @@ function deleteSelectedFirmware() {
             :tabindex="tabIndex"
             @click="emitter?.emit('showDeleteFirmwareDialog', [item])"
           >
-            <v-icon class="text-romm-red">mdi-delete</v-icon>
+            <v-icon class="text-romm-red" :icon="mdiDelete"></v-icon>
           </v-btn>
         </v-btn-group>
       </template>

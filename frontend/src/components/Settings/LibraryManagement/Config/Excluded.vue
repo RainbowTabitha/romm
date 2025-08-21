@@ -14,44 +14,44 @@ const exclusions = [
   {
     set: configStore.config.EXCLUDED_PLATFORMS,
     title: t("common.platform"),
-    icon: "mdi-controller-off",
+    icon: "mdiControllerOff",
     type: "EXCLUDED_PLATFORMS",
   },
   {
     set: configStore.config.EXCLUDED_SINGLE_FILES,
     title: t("settings.excluded-single-rom-files"),
-    icon: "mdi-file-document-remove-outline",
+    icon: "mdiFileDocumentRemoveOutline",
     type: "EXCLUDED_SINGLE_FILES",
   },
   {
     set: configStore.config.EXCLUDED_SINGLE_EXT,
     title: t("settings.excluded-single-rom-extensions"),
-    icon: "mdi-file-document-remove-outline",
+    icon: "mdiFileDocumentRemoveOutline",
     type: "EXCLUDED_SINGLE_EXT",
   },
   {
     set: configStore.config.EXCLUDED_MULTI_FILES,
     title: t("settings.excluded-multi-rom-files"),
-    icon: "mdi-file-document-remove-outline",
+    icon: "mdiFileDocumentRemoveOutline",
     type: "EXCLUDED_MULTI_FILES",
   },
   {
     set: configStore.config.EXCLUDED_MULTI_PARTS_FILES,
     title: t("settings.excluded-multi-rom-parts-files"),
-    icon: "mdi-file-document-remove-outline",
+    icon: "mdiFileDocumentRemoveOutline",
     type: "EXCLUDED_MULTI_PARTS_FILES",
   },
   {
     set: configStore.config.EXCLUDED_MULTI_PARTS_EXT,
     title: t("settings.excluded-multi-rom-parts-extensions"),
-    icon: "mdi-file-document-remove-outline",
+    icon: "mdiFileDocumentRemoveOutline",
     type: "EXCLUDED_MULTI_PARTS_EXT",
   },
 ];
 const editable = ref(false);
 </script>
 <template>
-  <r-section icon="mdi-cancel" :title="t('settings.excluded')">
+  <r-section icon="mdiCancel" :title="t('settings.excluded')">
     <template #toolbar-append>
       <v-btn
         v-if="authStore.scopes.includes('platforms.write')"
@@ -59,7 +59,7 @@ const editable = ref(false);
         size="small"
         :color="editable ? 'primary' : ''"
         variant="text"
-        icon="mdi-cog"
+        icon="mdiCog"
         @click="editable = !editable"
       />
     </template>

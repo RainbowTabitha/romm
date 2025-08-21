@@ -42,7 +42,7 @@ async function resetPassword() {
         response.statusText;
       emitter?.emit("snackbarShow", {
         msg: `Unable to reset password: ${errorMessage}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       console.error(
@@ -63,7 +63,7 @@ async function resetPassword() {
             :label="t('login.new-password')"
             :type="visibleNewPassword ? 'text' : 'password'"
             required
-            :append-inner-icon="visibleNewPassword ? 'mdi-eye-off' : 'mdi-eye'"
+            :append-inner-icon="visibleNewPassword ? 'mdiEyeOff' : 'mdiEye'"
             @click:append-inner="visibleNewPassword = !visibleNewPassword"
             variant="underlined"
           />
@@ -73,7 +73,7 @@ async function resetPassword() {
             :type="visibleConfirmNewPassword ? 'text' : 'password'"
             required
             :append-inner-icon="
-              visibleConfirmNewPassword ? 'mdi-eye-off' : 'mdi-eye'
+              visibleConfirmNewPassword ? 'mdiEyeOff' : 'mdiEye'
             "
             @click:append-inner="
               visibleConfirmNewPassword = !visibleConfirmNewPassword
@@ -93,7 +93,7 @@ async function resetPassword() {
             :disabled="newPassword !== confirmPassword"
           >
             <template #prepend>
-              <v-icon>mdi-send</v-icon>
+              <v-icon :icon="mdiSend"></v-icon>
             </template>
             {{ t("login.reset-password") }}
             <template #loader>

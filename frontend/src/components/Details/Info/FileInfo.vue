@@ -189,8 +189,8 @@ watch(
                   >
                     {{
                       romUser.is_main_sibling
-                        ? "mdi-checkbox-outline"
-                        : "mdi-checkbox-blank-outline"
+                        ? "mdiCheckboxOutline"
+                        : "mdiCheckboxBlankOutline"
                     }}
                   </v-icon>
                   {{ romUser.is_main_sibling ? "" : t("rom.default") }}

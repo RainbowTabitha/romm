@@ -32,7 +32,7 @@ async function deleteCollection() {
     .then((response) => {
       emitter?.emit("snackbarShow", {
         msg: "Collection deleted",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       collectionsStore.removeCollection(collection.value as Collection);
@@ -44,7 +44,7 @@ async function deleteCollection() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -66,7 +66,7 @@ function closeDialog() {
     v-if="collection"
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     scroll-content
     :width="lgAndUp ? '50vw' : '95vw'"
   >

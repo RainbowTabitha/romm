@@ -187,7 +187,7 @@ async function loadSave(save: SaveSchema) {
     loadEmulatorJSSave(new Uint8Array(data));
     displayMessage("Save loaded from server", {
       duration: 3000,
-      icon: "mdi-cloud-download-outline",
+      icon: "mdiCloudDownloadOutline",
     });
     return;
   }
@@ -218,13 +218,13 @@ window.EJS_onSaveSave = async function ({
   if (save) {
     displayMessage("Save synced with server", {
       duration: 4000,
-      icon: "mdi-cloud-sync",
+      icon: "mdiCloudSync",
     });
   } else {
     displayMessage("Error syncing save with server", {
       duration: 4000,
       className: "msg-error",
-      icon: "mdi-sync-alert",
+      icon: "mdiSyncAlert",
     });
   }
 };
@@ -238,7 +238,7 @@ async function loadState(state: StateSchema) {
     loadEmulatorJSState(new Uint8Array(data));
     displayMessage("State loaded from server", {
       duration: 3000,
-      icon: "mdi-cloud-download-outline",
+      icon: "mdiCloudDownloadOutline",
     });
     return;
   }
@@ -272,13 +272,13 @@ window.EJS_onSaveState = async function ({
   if (state) {
     displayMessage("State synced with server", {
       duration: 4000,
-      icon: "mdi-cloud-sync",
+      icon: "mdiCloudSync",
     });
   } else {
     displayMessage("Error syncing state with server", {
       duration: 4000,
       className: "msg-error",
-      icon: "mdi-sync-alert",
+      icon: "mdiSyncAlert",
     });
   }
 };
@@ -306,7 +306,7 @@ window.EJS_onGameStart = async () => {
           window.EJS_emulator.gameManager.loadState(e);
           displayMessage("Quick load from server", {
             duration: 3000,
-            icon: "mdi-flash",
+            icon: "mdiFlash",
           });
         });
     }

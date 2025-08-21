@@ -49,7 +49,7 @@ async function deleteSaves() {
 
     emitter?.emit("snackbarShow", {
       msg: `Successfully deleted ${data.length} saves`,
-      icon: "mdi-check-circle",
+      icon: "mdiCheckCircle",
       color: "green",
       timeout: 4000,
     });
@@ -58,7 +58,7 @@ async function deleteSaves() {
   } catch (error) {
     emitter?.emit("snackbarShow", {
       msg: `Unable to delete saves: ${error}`,
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
       timeout: 4000,
     });

@@ -294,7 +294,7 @@ onBeforeUnmount(() => {
                       density="compact"
                       title="Verified with Hasheous"
                     >
-                      <v-icon>mdi-check-decagram-outline</v-icon>
+                      <v-icon :icon="mdiCheckDecagramOutline"></v-icon>
                     </v-chip>
                     <v-chip
                       v-if="rom.siblings.length > 0 && showSiblings"
@@ -302,7 +302,7 @@ onBeforeUnmount(() => {
                       density="compact"
                       :title="`${rom.siblings.length} sibling(s)`"
                     >
-                      <v-icon>mdi-card-multiple-outline</v-icon>
+                      <v-icon :icon="mdiCardMultipleOutline"></v-icon>
                     </v-chip>
                     <v-chip
                       v-if="collectionsStore.isFavorite(rom)"
@@ -311,7 +311,7 @@ onBeforeUnmount(() => {
                       density="compact"
                       class="translucent text-white mr-1 mb-1 px-1"
                     >
-                      <v-icon>mdi-star</v-icon>
+                      <v-icon :icon="mdiStar"></v-icon>
                     </v-chip>
                     <v-chip
                       v-if="hasNotes && showChips"
@@ -320,7 +320,7 @@ onBeforeUnmount(() => {
                       title="View notes"
                       @click.stop="showNoteDialog"
                     >
-                      <v-icon>mdi-notebook</v-icon>
+                      <v-icon :icon="mdiNotebook"></v-icon>
                     </v-chip>
                   </v-col>
                 </v-row>

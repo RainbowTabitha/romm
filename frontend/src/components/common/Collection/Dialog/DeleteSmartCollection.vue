@@ -31,7 +31,7 @@ async function deleteSmartCollection() {
     .then((response) => {
       emitter?.emit("snackbarShow", {
         msg: "Smart collection deleted",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
 
@@ -42,7 +42,7 @@ async function deleteSmartCollection() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -66,7 +66,7 @@ function closeDialog() {
     v-if="smartCollection"
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     scroll-content
     :width="lgAndUp ? '50vw' : '95vw'"
   >

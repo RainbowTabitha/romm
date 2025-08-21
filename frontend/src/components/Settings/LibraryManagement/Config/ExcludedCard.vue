@@ -50,7 +50,7 @@ function removeExclusion(exclusionValue: string) {
             variant="text"
             rounded="0"
             size="x-small"
-            icon="mdi-delete"
+            icon="mdiDelete"
             class="text-romm-red ml-1"
             @click="removeExclusion(exclusionValue)"
           />
@@ -60,7 +60,7 @@ function removeExclusion(exclusionValue: string) {
         <v-btn
           v-if="editable"
           rounded="1"
-          prepend-icon="mdi-plus"
+          prepend-icon="mdiPlus"
           variant="outlined"
           class="text-primary ml-1"
           @click="

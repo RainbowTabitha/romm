@@ -46,7 +46,7 @@ async function uploadSaves() {
 
   emitter?.emit("snackbarShow", {
     msg: `Uploading ${filesToUpload.value.length} saves to ${rom.value?.name}...`,
-    icon: "mdi-loading mdi-spin",
+    icon: "mdiLoading mdiSpin",
     color: "primary",
   });
 
@@ -62,7 +62,7 @@ async function uploadSaves() {
 
       emitter?.emit("snackbarShow", {
         msg: `Uploaded ${saves.length} files successfully!`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -72,7 +72,7 @@ async function uploadSaves() {
         msg: `Unable to upload saves: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -97,7 +97,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-content-save"
+    icon="mdiContentSave"
     scroll-content
     :width="mdAndUp ? '50vw' : '95vw'"
   >
@@ -142,7 +142,7 @@ function closeDialog() {
           <template #item.actions="{ item }">
             <v-btn-group divided density="compact">
               <v-btn @click="removeFileFromFileInput(item.name)">
-                <v-icon class="text-romm-red"> mdi-close </v-icon>
+                <v-icon class="text-romm-red"> mdiClose </v-icon>
               </v-btn>
             </v-btn-group>
           </template>

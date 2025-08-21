@@ -75,7 +75,7 @@ function onCardClick(save: SaveSchema, event: MouseEvent) {
           size="small"
           @click="emitter?.emit('addSavesDialog', rom)"
         >
-          <v-icon>mdi-cloud-upload-outline</v-icon>
+          <v-icon :icon="mdiCloudUploadOutline"></v-icon>
         </v-btn>
         <v-btn
           drawer
@@ -84,7 +84,7 @@ function onCardClick(save: SaveSchema, event: MouseEvent) {
           size="small"
           @click="downloasSaves"
         >
-          <v-icon>mdi-download</v-icon>
+          <v-icon :icon="mdiDownload"></v-icon>
         </v-btn>
         <v-btn
           v-if="scopes.includes('assets.write')"
@@ -102,7 +102,7 @@ function onCardClick(save: SaveSchema, event: MouseEvent) {
           "
           size="small"
         >
-          <v-icon>mdi-delete</v-icon>
+          <v-icon :icon="mdiDelete"></v-icon>
         </v-btn>
       </v-btn-group>
     </v-col>
@@ -143,7 +143,7 @@ function onCardClick(save: SaveSchema, event: MouseEvent) {
                         download
                         size="small"
                       >
-                        <v-icon>mdi-download</v-icon>
+                        <v-icon :icon="mdiDownload"></v-icon>
                       </v-btn>
                       <v-btn
                         v-if="scopes.includes('assets.write')"
@@ -156,7 +156,10 @@ function onCardClick(save: SaveSchema, event: MouseEvent) {
                           })
                         "
                       >
-                        <v-icon class="text-romm-red">mdi-delete</v-icon>
+                        <v-icon
+                          class="text-romm-red"
+                          :icon="mdiDelete"
+                        ></v-icon>
                       </v-btn>
                     </v-btn-group>
                   </v-slide-x-transition>

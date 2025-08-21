@@ -21,7 +21,7 @@ function openCreateDialog() {
 <template>
   <v-btn
     v-if="isFiltered || searchTerm"
-    icon="mdi-playlist-plus"
+    icon="mdiPlaylistPlus"
     @click="openCreateDialog"
     variant="text"
     :title="t('collection.add-collection')"

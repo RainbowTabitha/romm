@@ -28,7 +28,7 @@ async function deleteUser() {
       if (user.value) usersStore.remove(user.value.id);
       emitter?.emit("snackbarShow", {
         msg: `User ${user.value.username} successfully removed!`,
-        icon: "mdi-check",
+        icon: "mdiCheck",
         color: "romm-green",
         timeout: 4000,
       });
@@ -38,7 +38,7 @@ async function deleteUser() {
         msg: `Unable to delete user ${user.value.username}: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     });
@@ -55,7 +55,7 @@ function closeDialog() {
     v-if="user"
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     :width="lgAndUp ? '45vw' : '95vw'"
   >
     <template #content>

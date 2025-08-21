@@ -46,7 +46,7 @@ function editUser() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: `User ${data.username} updated successfully`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 5000,
       });
@@ -60,7 +60,7 @@ function editUser() {
         msg: `Unable to edit user: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 5000,
       });
@@ -102,7 +102,7 @@ onUnmounted(() => {
                       class="d-flex translucent cursor-pointer h-100 align-center justify-center text-h4"
                       @click="triggerFileInput"
                     >
-                      <v-icon>mdi-pencil</v-icon>
+                      <v-icon :icon="mdiPencil"></v-icon>
                     </div>
                   </v-fade-transition>
                   <v-file-input
@@ -110,7 +110,7 @@ onUnmounted(() => {
                     v-model="userToEdit.avatar"
                     class="file-input text-truncate"
                     label="Avatar"
-                    prepend-inner-icon="mdi-image"
+                    prepend-inner-icon="mdiImage"
                     prepend-icon=""
                     variant="outlined"
                     hide-details
@@ -135,7 +135,7 @@ onUnmounted(() => {
       </v-col>
     </v-row>
 
-    <r-section class="ma-4" icon="mdi-account" title="Account details">
+    <r-section class="ma-4" icon="mdiAccount" title="Account details">
       <template #content>
         <v-text-field
           class="ma-4"

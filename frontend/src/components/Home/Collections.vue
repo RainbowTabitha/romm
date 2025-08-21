@@ -58,7 +58,7 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-  <r-section icon="mdi-bookmark-box-multiple" :title="props.title">
+  <r-section icon="mdiBookmarkBoxMultiple" :title="props.title">
     <template #toolbar-append>
       <v-btn
         aria-label="Toggle collections grid view"
@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
         rounded="0"
         @click="toggleGridCollections"
         ><v-icon>{{
-          gridCollections ? "mdi-view-comfy" : "mdi-view-column"
+          gridCollections ? "mdiViewComfy" : "mdiViewColumn"
         }}</v-icon>
       </v-btn>
     </template>

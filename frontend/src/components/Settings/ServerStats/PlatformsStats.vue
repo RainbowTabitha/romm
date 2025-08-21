@@ -43,7 +43,7 @@ function getPlatformPercentage(
 
 <template>
   <r-section
-    icon="mdi-harddisk"
+    icon="mdiHarddisk"
     :title="t('common.platforms-size')"
     elevation="0"
     titleDivider

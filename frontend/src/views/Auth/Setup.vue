@@ -85,7 +85,7 @@ async function finishWizard() {
         msg: `Unable to create user: ${
           response?.data?.detail || response?.statusText || message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     });
@@ -131,7 +131,7 @@ async function finishWizard() {
                         type="text"
                         required
                         autocomplete="on"
-                        prepend-inner-icon="mdi-account"
+                        prepend-inner-icon="mdiAccount"
                         variant="underlined"
                       />
                       <v-text-field
@@ -140,7 +140,7 @@ async function finishWizard() {
                         type="text"
                         required
                         autocomplete="on"
-                        prepend-inner-icon="mdi-account"
+                        prepend-inner-icon="mdiAccount"
                         variant="underlined"
                       />
                       <v-text-field
@@ -149,9 +149,9 @@ async function finishWizard() {
                         :type="visiblePassword ? 'text' : 'password'"
                         required
                         autocomplete="on"
-                        prepend-inner-icon="mdi-lock"
+                        prepend-inner-icon="mdiLock"
                         :append-inner-icon="
-                          visiblePassword ? 'mdi-eye-off' : 'mdi-eye'
+                          visiblePassword ? 'mdiEyeOff' : 'mdiEye'
                         "
                         @click:append-inner="visiblePassword = !visiblePassword"
                         @keydown.enter="filledAdminUser && next()"

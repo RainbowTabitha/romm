@@ -41,8 +41,8 @@ const { activeCollectionsDrawer } = storeToRefs(navigationStore);
             ? 'primary'
             : ''
         "
-        >mdi-bookmark-box-multiple</v-icon
-      >
+        :icon="mdiBookmarkBoxMultiple"
+      ></v-icon>
       <v-expand-transition>
         <span
           v-if="withTag"

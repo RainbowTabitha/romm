@@ -62,7 +62,7 @@ async function searchCovers() {
       .catch((error) => {
         emitter?.emit("snackbarShow", {
           msg: error.response.data.detail,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
         });
       })
@@ -111,7 +111,7 @@ onBeforeUnmount(() => {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-image-search-outline"
+    icon="mdiImageSearchOutline"
     :loading-condition="searching"
     :empty-state-condition="filteredCovers?.length == 0"
     empty-state-type="game"
@@ -149,7 +149,7 @@ onBeforeUnmount(() => {
             @click="searchCovers"
             class="bg-toplayer"
             variant="text"
-            icon="mdi-search-web"
+            icon="mdiSearchWeb"
             block
             rounded="0"
             :disabled="searching"

@@ -23,7 +23,7 @@ function setFavourites() {
     :color="filterFavourites ? 'primary' : ''"
     @click="setFavourites"
   >
-    <v-icon :color="filterFavourites ? 'primary' : ''">mdi-star</v-icon
+    <v-icon :color="filterFavourites ? 'primary' : ''" :icon="mdiStar"></v-icon
     ><span
       class="ml-2"
       :class="{

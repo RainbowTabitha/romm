@@ -201,7 +201,7 @@ function onFilterClick(filter: FilterType, value: string) {
             <v-carousel
               v-model="carousel"
               hide-delimiter-background
-              delimiter-icon="mdi-square"
+              delimiter-icon="mdiSquare"
               class="bg-background"
               show-arrows="hover"
               hide-delimiters
@@ -210,7 +210,7 @@ function onFilterClick(filter: FilterType, value: string) {
             >
               <template #prev="{ props }">
                 <v-btn
-                  icon="mdi-chevron-left"
+                  icon="mdiChevronLeft"
                   class="translucent"
                   @click="props.onClick"
                 />
@@ -241,7 +241,7 @@ function onFilterClick(filter: FilterType, value: string) {
               </v-carousel-item>
               <template #next="{ props }">
                 <v-btn
-                  icon="mdi-chevron-right"
+                  icon="mdiChevronRight"
                   class="translucent"
                   @click="props.onClick"
                 />
@@ -252,7 +252,7 @@ function onFilterClick(filter: FilterType, value: string) {
                 <v-carousel
                   v-model="carousel"
                   hide-delimiter-background
-                  delimiter-icon="mdi-square"
+                  delimiter-icon="mdiSquare"
                   show-arrows="hover"
                   hide-delimiters
                   class="dialog-carousel"
@@ -260,7 +260,7 @@ function onFilterClick(filter: FilterType, value: string) {
                   <template #prev="{ props }">
                     <v-btn
                       @click="props.onClick"
-                      icon="mdi-chevron-left"
+                      icon="mdiChevronLeft"
                       class="translucent"
                     />
                   </template>
@@ -287,7 +287,7 @@ function onFilterClick(filter: FilterType, value: string) {
                   />
                   <template #next="{ props }">
                     <v-btn
-                      icon="mdi-chevron-right"
+                      icon="mdiChevronRight"
                       class="translucent"
                       @click="props.onClick"
                     />

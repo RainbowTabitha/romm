@@ -29,7 +29,7 @@ function deleteBindPlatform() {
     .catch(({ response, message }) => {
       emitter?.emit("snackbarShow", {
         msg: `${response?.data?.detail || response?.statusText || message}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });
@@ -45,7 +45,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     :width="lgAndUp ? '45vw' : '95vw'"
   >
     <template #content>

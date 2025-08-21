@@ -26,7 +26,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-content-copy"
+    icon="mdiContentCopy"
     :width="lgAndUp ? '60vw' : '95vw'"
   >
     <template #content>

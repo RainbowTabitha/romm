@@ -42,7 +42,7 @@ async function addRomsToCollection() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: `Roms added to ${selectedCollection.value?.name} successfully!`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -53,7 +53,7 @@ async function addRomsToCollection() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -76,7 +76,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-bookmark-plus-outline"
+    icon="mdiBookmarkPlusOutline"
     scroll-content
     :width="mdAndUp ? '45vw' : '95vw'"
   >

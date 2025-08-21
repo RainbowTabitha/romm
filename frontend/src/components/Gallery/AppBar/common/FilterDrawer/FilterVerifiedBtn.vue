@@ -23,7 +23,10 @@ function setVerified() {
     :color="filterVerified ? 'primary' : ''"
     @click="setVerified"
   >
-    <v-icon :color="filterVerified ? 'primary' : ''">mdi-check-decagram</v-icon
+    <v-icon
+      :color="filterVerified ? 'primary' : ''"
+      :icon="mdiCheckDecagram"
+    ></v-icon
     ><span
       class="ml-2"
       :class="{

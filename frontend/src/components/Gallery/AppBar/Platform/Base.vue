@@ -30,7 +30,7 @@ const { activePlatformInfoDrawer } = storeToRefs(navigationStore);
         v-if="currentPlatform"
         variant="text"
         rounded="0"
-        icon="mdi-cog"
+        icon="mdiCog"
         :color="activePlatformInfoDrawer ? 'primary' : ''"
         @click="navigationStore.switchActivePlatformInfoDrawer"
       >
@@ -42,7 +42,7 @@ const { activePlatformInfoDrawer } = storeToRefs(navigationStore);
           class="mx-3"
         />
         <v-icon
-          icon="mdi-cog"
+          icon="mdiCog"
           size="xs"
           class="position-absolute"
           style="bottom: 4px; right: 4px"

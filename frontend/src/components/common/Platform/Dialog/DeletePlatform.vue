@@ -36,7 +36,7 @@ async function deletePlatform() {
     .then((response) => {
       emitter?.emit("snackbarShow", {
         msg: "Platform deleted",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       if (excludeOnDelete.value && platform.value) {
@@ -51,7 +51,7 @@ async function deletePlatform() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -74,7 +74,7 @@ function closeDialog() {
     v-if="platform"
     @close="closeDialog"
     v-model="show"
-    icon="mdi-delete"
+    icon="mdiDelete"
     scroll-content
     :width="lgAndUp ? '50vw' : '95vw'"
   >
@@ -99,9 +99,7 @@ function closeDialog() {
         <v-col>
           <v-chip @click="excludeOnDelete = !excludeOnDelete" variant="text"
             ><v-icon :color="excludeOnDelete ? 'accent' : ''" class="mr-1">{{
-              excludeOnDelete
-                ? "mdi-checkbox-outline"
-                : "mdi-checkbox-blank-outline"
+              excludeOnDelete ? "mdiCheckboxOutline" : "mdiCheckboxBlankOutline"
             }}</v-icon>
             {{ t("common.exclude-on-delete") }}
           </v-chip>

@@ -220,7 +220,7 @@ function updateOptions({ sortBy }: { sortBy: SortBy }) {
             density="compact"
             title="Verified with Hasheous"
           >
-            <v-icon>mdi-check-decagram-outline</v-icon>
+            <v-icon :icon="mdiCheckDecagramOutline"></v-icon>
           </v-chip>
           <v-chip
             v-if="item.siblings.length > 0 && showSiblings"
@@ -228,7 +228,7 @@ function updateOptions({ sortBy }: { sortBy: SortBy }) {
             density="compact"
             :title="`${item.siblings.length} sibling(s)`"
           >
-            <v-icon>mdi-card-multiple-outline</v-icon>
+            <v-icon :icon="mdiCardMultipleOutline"></v-icon>
           </v-chip>
         </template>
       </v-list-item>
@@ -317,7 +317,7 @@ function updateOptions({ sortBy }: { sortBy: SortBy }) {
           size="small"
           @click.stop="romApi.downloadRom({ rom: item })"
         >
-          <v-icon>mdi-download</v-icon>
+          <v-icon :icon="mdiDownload"></v-icon>
         </v-btn>
         <v-btn
           v-if="checkIfEJSEmulationSupported(item.platform_slug)"
@@ -331,7 +331,7 @@ function updateOptions({ sortBy }: { sortBy: SortBy }) {
             })
           "
         >
-          <v-icon>mdi-play</v-icon>
+          <v-icon :icon="mdiPlay"></v-icon>
         </v-btn>
         <v-btn
           v-if="checkIfRuffleEmulationSupported(item.platform_slug)"
@@ -345,7 +345,7 @@ function updateOptions({ sortBy }: { sortBy: SortBy }) {
             })
           "
         >
-          <v-icon>mdi-play</v-icon>
+          <v-icon :icon="mdiPlay"></v-icon>
         </v-btn>
         <v-menu
           v-if="
@@ -357,7 +357,7 @@ function updateOptions({ sortBy }: { sortBy: SortBy }) {
         >
           <template #activator="{ props }">
             <v-btn v-bind="props" variant="text" size="small">
-              <v-icon>mdi-dots-vertical</v-icon>
+              <v-icon :icon="mdiDotsVertical"></v-icon>
             </v-btn>
           </template>
           <admin-menu :rom="item" />

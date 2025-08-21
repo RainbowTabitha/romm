@@ -17,7 +17,7 @@ const emit = defineEmits(["click"]);
       block
       size="large"
       rounded="0"
-      prepend-icon="mdi-plus"
+      prepend-icon="mdiPlus"
       variant="outlined"
       class="text-primary"
       @click="$emit('click')"

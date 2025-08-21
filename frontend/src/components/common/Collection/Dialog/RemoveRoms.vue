@@ -46,7 +46,7 @@ async function removeRomsFromCollection() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: `Roms removed from ${selectedCollection.value?.name} successfully!`,
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
         timeout: 2000,
       });
@@ -57,7 +57,7 @@ async function removeRomsFromCollection() {
       console.log(error);
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
       return;
@@ -84,7 +84,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-bookmark-remove-outline"
+    icon="mdiBookmarkRemoveOutline"
     scroll-content
     :width="mdAndUp ? '45vw' : '95vw'"
   >

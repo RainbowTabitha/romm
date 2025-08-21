@@ -39,7 +39,7 @@ watch(files, (newList) => {
         <template v-if="file.failed">
           <v-list-item-title class="d-flex justify-space-between">
             {{ file.filename }}
-            <v-icon :icon="`mdi-close`" :color="`red`" class="mx-2" />
+            <v-icon :icon="`mdiClose`" :color="`red`" class="mx-2" />
           </v-list-item-title>
           <v-list-item-subtitle v-if="file.failureReason" class="text-red mt-1">
             {{ file.failureReason }}
@@ -49,7 +49,7 @@ watch(files, (newList) => {
           <v-list-item-title class="d-flex justify-space-between">
             {{ file.filename }}
             <v-icon
-              :icon="file.finished ? 'mdi-check' : 'mdi-loading mdi-spin'"
+              :icon="file.finished ? 'mdiCheck' : 'mdiLoading mdiSpin'"
               :color="file.finished ? 'green' : 'primary'"
               class="mx-2"
             />

@@ -115,7 +115,7 @@ function onClose() {
         aria-label="Search collections"
         :tabindex="tabIndex"
         v-model="filterText"
-        prepend-inner-icon="mdi-filter-outline"
+        prepend-inner-icon="mdiFilterOutline"
         clearable
         hide-details
         @click:clear="clear"
@@ -191,7 +191,7 @@ function onClose() {
         @click="addCollection"
         variant="tonal"
         color="primary"
-        prepend-icon="mdi-plus"
+        prepend-icon="mdiPlus"
         :tabindex="tabIndex"
         size="large"
         block

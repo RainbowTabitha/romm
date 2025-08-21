@@ -367,7 +367,7 @@ onMounted(async () => {
           :tabindex="activeFilterDrawer ? 0 : -1"
           v-model="selectedPlatform"
           hide-details
-          prepend-inner-icon="mdi-controller"
+          prepend-inner-icon="mdiController"
           clearable
           :label="t('common.platform')"
           variant="outlined"

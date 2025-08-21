@@ -25,11 +25,11 @@ emitter?.on("showNoteDialog", (romToShow) => {
   <v-dialog v-model="show" max-width="600">
     <v-card>
       <v-card-title class="d-flex align-center">
-        <v-icon class="mr-2">mdi-notebook</v-icon>
+        <v-icon class="mr-2" :icon="mdiNotebook"></v-icon>
         {{ t("rom.my-notes") }} - {{ rom?.name }}
         <v-spacer />
         <v-btn icon @click="show = false">
-          <v-icon>mdi-close</v-icon>
+          <v-icon :icon="mdiClose"></v-icon>
         </v-btn>
       </v-card-title>
       <v-card-text class="pa-4">

@@ -125,7 +125,7 @@ async function searchRom() {
       .catch((error) => {
         emitter?.emit("snackbarShow", {
           msg: error.response.data.detail,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
         });
       })
@@ -244,7 +244,7 @@ async function updateRom(
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: "Rom updated successfully!",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       romsStore.update(data as SimpleRom);
@@ -255,7 +255,7 @@ async function updateRom(
     .catch((error) => {
       emitter?.emit("snackbarShow", {
         msg: error.response.data.detail,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     })
@@ -285,7 +285,7 @@ onBeforeUnmount(() => {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-search-web"
+    icon="mdiSearchWeb"
     :loading-condition="searching"
     :empty-state-condition="matchedRoms.length == 0"
     :empty-state-type="searched ? 'game' : undefined"
@@ -412,7 +412,7 @@ onBeforeUnmount(() => {
             class="bg-toplayer"
             variant="text"
             rounded="0"
-            icon="mdi-search-web"
+            icon="mdiSearchWeb"
             block
             :disabled="searching"
           />
@@ -447,7 +447,7 @@ onBeforeUnmount(() => {
               <v-card-title class="text-center">
                 <v-btn
                   color="toplayer"
-                  icon="mdi-arrow-left"
+                  icon="mdiArrowLeft"
                   variant="flat"
                   size="small"
                   @click="backToMatched"
@@ -526,8 +526,8 @@ onBeforeUnmount(() => {
                     class="mr-1"
                     >{{
                       selectedCover && renameFromSource
-                        ? "mdi-checkbox-outline"
-                        : "mdi-checkbox-blank-outline"
+                        ? "mdiCheckboxOutline"
+                        : "mdiCheckboxBlankOutline"
                     }}</v-icon
                   >{{
                     t("rom.rename-file-part1", { source: selectedCover?.name })

@@ -5,7 +5,7 @@ import { views } from "@/utils";
 defineProps<{ title: string }>();
 </script>
 <template>
-  <r-section icon="mdi-shimmer" :title="title">
+  <r-section icon="mdiShimmer" :title="title">
     <template #content>
       <v-row class="flex-nowrap overflow-x-auto pa-1" no-gutters>
         <v-col

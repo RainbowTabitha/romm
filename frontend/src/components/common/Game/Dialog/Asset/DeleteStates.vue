@@ -49,7 +49,7 @@ async function deleteStates() {
 
     emitter?.emit("snackbarShow", {
       msg: `Successfully deleted ${data.length} states`,
-      icon: "mdi-check-circle",
+      icon: "mdiCheckCircle",
       color: "green",
       timeout: 4000,
     });
@@ -58,7 +58,7 @@ async function deleteStates() {
   } catch (error) {
     emitter?.emit("snackbarShow", {
       msg: `Unable to delete states: ${error}`,
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
       timeout: 4000,
     });

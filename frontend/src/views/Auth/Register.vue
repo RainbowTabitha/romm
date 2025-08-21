@@ -22,7 +22,7 @@ function register() {
     .then(() => {
       emitter?.emit("snackbarShow", {
         msg: "User registered successfully",
-        icon: "mdi-check-circle",
+        icon: "mdiCheckCircle",
         color: "green",
         timeout: 5000,
       });
@@ -33,7 +33,7 @@ function register() {
         msg: `Unable to register user: ${
           error?.response?.data?.detail || error?.message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 5000,
       });
@@ -76,14 +76,14 @@ onBeforeMount(() => {
             :label="t('settings.password')"
             :type="visiblePassword ? 'text' : 'password'"
             required
-            :append-inner-icon="visiblePassword ? 'mdi-eye-off' : 'mdi-eye'"
+            :append-inner-icon="visiblePassword ? 'mdiEyeOff' : 'mdiEye'"
             @click:append-inner="visiblePassword = !visiblePassword"
             variant="underlined"
             class="mt-4"
           />
           <v-btn type="submit" class="bg-toplayer mt-4" variant="text" block>
             <template #prepend>
-              <v-icon>mdi-account-check</v-icon>
+              <v-icon :icon="mdiAccountCheck"></v-icon>
             </template>
             {{ t("common.create") }}
             <template #loader>

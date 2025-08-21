@@ -9,6 +9,7 @@ import type { Emitter } from "mitt";
 import { storeToRefs } from "pinia";
 import { inject, onBeforeUnmount } from "vue";
 import { useI18n } from "vue-i18n";
+import { mdiMagnifyScan } from "@mdi/js";
 
 withDefaults(
   defineProps<{
@@ -88,7 +89,7 @@ socket.on("scan:done", () => {
   emitter?.emit("refreshDrawer", null);
   emitter?.emit("snackbarShow", {
     msg: "Scan completed successfully!",
-    icon: "mdi-check-bold",
+    icon: "mdiCheckBold",
     color: "green",
     timeout: 4000,
   });
@@ -99,7 +100,7 @@ socket.on("scan:done_ko", (msg) => {
 
   emitter?.emit("snackbarShow", {
     msg: `Scan failed: ${msg}`,
-    icon: "mdi-close-circle",
+    icon: "mdiCloseCircle",
     color: "red",
   });
   socket.disconnect();
@@ -132,9 +133,11 @@ onBeforeUnmount(() => {
         :size="20"
         indeterminate
       />
-      <v-icon v-else :color="$route.name == 'scan' ? 'primary' : ''"
-        >mdi-magnify-scan</v-icon
-      >
+      <v-icon
+        v-else
+        :color="$route.name == 'scan' ? 'primary' : ''"
+        :icon="mdiMagnifyScan"
+      ></v-icon>
       <v-expand-transition>
         <span
           v-if="withTag"

@@ -19,7 +19,7 @@ const tasks = ref<{
 const watcherTasks = computed(() =>
   tasks.value.watcher.map((task) => ({
     ...task,
-    icon: task.enabled ? "mdi-file-check-outline" : "mdi-file-remove-outline",
+    icon: task.enabled ? "mdiFileCheckOutline" : "mdiFileRemoveOutline",
   })),
 );
 
@@ -28,7 +28,7 @@ const scheduledTasks = computed(() =>
     ...task,
     description:
       task.description + " " + convertCronExperssion(task.cron_string),
-    icon: task.enabled ? "mdi-clock-check-outline" : "mdi-clock-remove-outline",
+    icon: task.enabled ? "mdiClockCheckOutline" : "mdiClockRemoveOutline",
     cron_string: convertCronExperssion(task.cron_string),
   })),
 );
@@ -36,9 +36,9 @@ const scheduledTasks = computed(() =>
 // Icon mapping for manual tasks
 const getManualTaskIcon = (taskName: string) => {
   const iconMap: Record<string, string> = {
-    cleanup_orphaned_resources: "mdi-broom",
+    cleanup_orphaned_resources: "mdiBroom",
   };
-  return iconMap[taskName] || "mdi-play";
+  return iconMap[taskName] || "mdiPlay";
 };
 
 const manualTasks = computed(() =>
@@ -59,14 +59,10 @@ onMounted(() => {
 });
 </script>
 <template>
-  <r-section icon="mdi-pulse" title="Tasks" class="ma-2">
+  <r-section icon="mdiPulse" title="Tasks" class="ma-2">
     <template #toolbar-append> </template>
     <template #content>
-      <v-chip
-        label
-        variant="text"
-        prepend-icon="mdi-folder-eye"
-        class="ml-2 mt-1"
+      <v-chip label variant="text" prepend-icon="mdiFolderEye" class="ml-2 mt-1"
         >Watcher</v-chip
       >
       <v-divider class="border-opacity-25 ma-1" />
@@ -82,7 +78,7 @@ onMounted(() => {
         </v-col>
       </v-row>
 
-      <v-chip label variant="text" prepend-icon="mdi-clock" class="ml-2 mt-1"
+      <v-chip label variant="text" prepend-icon="mdiClock" class="ml-2 mt-1"
         >Scheduled</v-chip
       >
       <v-divider class="border-opacity-25 ma-1" />
@@ -104,7 +100,7 @@ onMounted(() => {
         <v-chip
           label
           variant="text"
-          prepend-icon="mdi-gesture-double-tap"
+          prepend-icon="mdiGestureDoubleTap"
           class="ml-2 mt-1"
           >Manual</v-chip
         >

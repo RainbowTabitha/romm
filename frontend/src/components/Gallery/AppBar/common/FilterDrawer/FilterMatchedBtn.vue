@@ -23,7 +23,7 @@ function setUnmatched() {
     :color="filterMatched ? 'primary' : ''"
     @click="setUnmatched"
   >
-    <v-icon :color="filterMatched ? 'primary' : ''">mdi-file-find</v-icon
+    <v-icon :color="filterMatched ? 'primary' : ''" :icon="mdiFileFind"></v-icon
     ><span
       class="ml-2"
       :class="{

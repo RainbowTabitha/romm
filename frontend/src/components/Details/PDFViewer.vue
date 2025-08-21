@@ -27,7 +27,7 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.sidebarToggle"
       type="button"
     >
-      <v-icon>mdi-menu</v-icon>
+      <v-icon :icon="mdiMenu"></v-icon>
     </button>
     <v-spacer />
 
@@ -44,7 +44,7 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.firstPage"
       type="button"
     >
-      <v-icon>mdi-page-first</v-icon>
+      <v-icon :icon="mdiPageFirst"></v-icon>
     </button>
 
     <button
@@ -53,7 +53,7 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.previousPage"
       type="button"
     >
-      <v-icon>mdi-chevron-left</v-icon>
+      <v-icon :icon="mdiChevronLeft"></v-icon>
     </button>
     <button
       v-show="!xs"
@@ -61,7 +61,7 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.nextPage"
       type="button"
     >
-      <v-icon>mdi-chevron-right</v-icon>
+      <v-icon :icon="mdiChevronRight"></v-icon>
     </button>
 
     <button
@@ -69,7 +69,7 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.lastPage"
       type="button"
     >
-      <v-icon>mdi-page-last</v-icon>
+      <v-icon :icon="mdiPageLast"></v-icon>
     </button>
     <button
       class="pdfv-toolbar-btn"
@@ -77,14 +77,14 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.zoomIn"
       type="button"
     >
-      <v-icon>mdi-magnify-plus-outline</v-icon>
+      <v-icon :icon="mdiMagnifyPlusOutline"></v-icon>
     </button>
     <button
       class="pdfv-toolbar-btn"
       :id="pdfViewerConfig.zoomOut"
       type="button"
     >
-      <v-icon>mdi-magnify-minus-outline</v-icon>
+      <v-icon :icon="mdiMagnifyMinusOutline"></v-icon>
     </button>
     <v-spacer />
     <button
@@ -92,7 +92,7 @@ const pdfViewerConfig = {
       :id="pdfViewerConfig.download"
       type="button"
     >
-      <v-icon>mdi-download</v-icon>
+      <v-icon :icon="mdiDownload"></v-icon>
     </button>
   </v-toolbar>
   <vue-pdf-app

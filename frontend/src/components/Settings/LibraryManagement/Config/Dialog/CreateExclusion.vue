@@ -46,7 +46,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-cancel"
+    icon="mdiCancel"
     :width="mdAndUp ? '45vw' : '95vw'"
   >
     <template #content>

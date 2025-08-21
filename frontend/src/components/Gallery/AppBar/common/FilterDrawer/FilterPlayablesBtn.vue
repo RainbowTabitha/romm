@@ -28,7 +28,7 @@ function setPlayables() {
     @click="setPlayables"
     :disabled="fetchTotalRoms > 10000"
   >
-    <v-icon :color="filterPlayables ? 'primary' : ''"> mdi-play </v-icon>
+    <v-icon :color="filterPlayables ? 'primary' : ''"> mdiPlay </v-icon>
     <span
       class="ml-2"
       :class="{

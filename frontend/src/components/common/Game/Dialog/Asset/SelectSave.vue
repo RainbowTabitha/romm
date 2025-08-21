@@ -42,7 +42,7 @@ function closeDialog() {
   <r-dialog
     @close="closeDialog"
     v-model="show"
-    icon="mdi-format-wrap-square"
+    icon="mdiFormatWrapSquare"
     scroll-content
     :width="mdAndUp ? '50vw' : '95vw'"
     id="select-save-dialog"
@@ -107,7 +107,7 @@ function closeDialog() {
         </v-hover>
         <div v-else>
           <v-col class="text-center mt-6">
-            <v-icon size="x-large">mdi-help-rhombus-outline</v-icon>
+            <v-icon size="x-large" :icon="mdiHelpRhombusOutline"></v-icon>
             <p class="text-h4 mt-2">{{ t("rom.no-states-found") }}</p>
           </v-col>
         </div>

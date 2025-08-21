@@ -35,7 +35,7 @@ withDefaults(
       open-delay="500"
       activator="parent"
     />
-    <v-icon>mdi-folder-question</v-icon>
+    <v-icon :icon="mdiFolderQuestion"></v-icon>
   </v-chip>
   <span v-else>
     <v-tooltip
@@ -46,7 +46,7 @@ withDefaults(
       open-delay="500"
       activator="parent"
     />
-    <v-icon color="accent" :size="size">mdi-folder-question</v-icon>
+    <v-icon color="accent" :size="size" :icon="mdiFolderQuestion"></v-icon>
   </span>
 </template>
 <style scoped>

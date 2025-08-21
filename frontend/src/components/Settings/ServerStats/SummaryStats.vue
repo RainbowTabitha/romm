@@ -18,7 +18,7 @@ const { t } = useI18n();
 
 <template>
   <r-section
-    icon="mdi-server"
+    icon="mdiServer"
     :title="t('rom.summary')"
     elevation="0"
     titleDivider
@@ -29,7 +29,7 @@ const { t } = useI18n();
       <v-row class="pa-2" dense>
         <v-col class="pa-2" cols="6" md="4" lg="2">
           <v-sheet class="pa-2 text-center" rounded>
-            <v-icon size="32">mdi-controller</v-icon>
+            <v-icon size="32" :icon="mdiController"></v-icon>
             <div class="text-h6 text-truncate font-weight-bold">
               {{ t("common.platforms-n", stats.PLATFORMS) }}
             </div>
@@ -37,7 +37,7 @@ const { t } = useI18n();
         </v-col>
         <v-col class="pa-2" cols="6" md="4" lg="2">
           <v-sheet class="pa-2 text-center" rounded>
-            <v-icon size="32">mdi-disc</v-icon>
+            <v-icon size="32" :icon="mdiDisc"></v-icon>
             <div class="text-h6 text-truncate font-weight-bold">
               {{ t("common.games-n", stats.ROMS) }}
             </div>
@@ -45,7 +45,7 @@ const { t } = useI18n();
         </v-col>
         <v-col class="pa-2" cols="6" md="4" lg="2">
           <v-sheet class="pa-2 text-center" rounded>
-            <v-icon size="32">mdi-content-save</v-icon>
+            <v-icon size="32" :icon="mdiContentSave"></v-icon>
             <div class="text-h6 text-truncate font-weight-bold">
               {{ t("common.saves-n", stats.SAVES) }}
             </div>
@@ -53,7 +53,7 @@ const { t } = useI18n();
         </v-col>
         <v-col class="pa-2" cols="6" md="4" lg="2">
           <v-sheet class="pa-2 text-center" rounded>
-            <v-icon size="32">mdi-file</v-icon>
+            <v-icon size="32" :icon="mdiFile"></v-icon>
             <div class="text-h6 text-truncate font-weight-bold">
               {{ t("common.states-n", stats.STATES) }}
             </div>
@@ -61,7 +61,7 @@ const { t } = useI18n();
         </v-col>
         <v-col class="pa-2" cols="6" md="4" lg="2">
           <v-sheet class="pa-2 text-center" rounded>
-            <v-icon size="32">mdi-image-area</v-icon>
+            <v-icon size="32" :icon="mdiImageArea"></v-icon>
             <div class="text-h6 text-truncate font-weight-bold">
               {{ t("common.screenshots-n", stats.SCREENSHOTS) }}
             </div>
@@ -70,7 +70,7 @@ const { t } = useI18n();
         </v-col>
         <v-col class="pa-2" cols="6" md="4" lg="2">
           <v-sheet class="pa-2 text-center" rounded>
-            <v-icon size="32">mdi-harddisk</v-icon>
+            <v-icon size="32" :icon="mdiHarddisk"></v-icon>
             <div class="text-h6 text-truncate font-weight-bold">
               {{ formatBytes(stats.TOTAL_FILESIZE_BYTES, 1) }}
               {{ t("common.size-on-disk") }}

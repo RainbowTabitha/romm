@@ -39,7 +39,7 @@ async function fetchRoms() {
     .catch((error) => {
       emitter?.emit("snackbarShow", {
         msg: `Couldn't fetch roms: ${error}`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
         timeout: 4000,
       });

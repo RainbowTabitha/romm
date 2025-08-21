@@ -100,40 +100,40 @@ const homeOptions = computed(() => [
   {
     title: t("settings.show-stats"),
     description: t("settings.show-stats-desc"),
-    iconEnabled: "mdi-thermostat-box",
-    iconDisabled: "mdi-thermostat-box",
+    iconEnabled: "mdiThermostatBox",
+    iconDisabled: "mdiThermostatBox",
     model: showStatsRef,
     modelTrigger: toggleShowStats,
   },
   {
     title: t("settings.show-recently-added"),
     description: t("settings.show-recently-added-desc"),
-    iconEnabled: "mdi-shimmer",
-    iconDisabled: "mdi-shimmer",
+    iconEnabled: "mdiShimmer",
+    iconDisabled: "mdiShimmer",
     model: showRecentRomsRef,
     modelTrigger: toggleShowRecentRoms,
   },
   {
     title: t("settings.show-continue-playing"),
     description: t("settings.show-continue-playing-desc"),
-    iconEnabled: "mdi-play",
-    iconDisabled: "mdi-play",
+    iconEnabled: "mdiPlay",
+    iconDisabled: "mdiPlay",
     model: showContinuePlayingRef,
     modelTrigger: toggleShowContinuePlaying,
   },
   {
     title: t("settings.show-platforms"),
     description: t("settings.show-platforms-desc"),
-    iconEnabled: "mdi-controller",
-    iconDisabled: "mdi-controller",
+    iconEnabled: "mdiController",
+    iconDisabled: "mdiController",
     model: showPlatformsRef,
     modelTrigger: toggleShowPlatforms,
   },
   {
     title: t("settings.show-collections"),
     description: t("settings.show-collections-desc"),
-    iconEnabled: "mdi-bookmark-box-multiple",
-    iconDisabled: "mdi-bookmark-box-multiple",
+    iconEnabled: "mdiBookmarkBoxMultiple",
+    iconDisabled: "mdiBookmarkBoxMultiple",
     model: showCollectionsRef,
     modelTrigger: toggleShowCollections,
   },
@@ -143,8 +143,8 @@ const platformsDrawerOptions = computed(() => [
   {
     title: t("settings.group-platforms-by"),
     description: t("settings.group-platforms-by-desc"),
-    iconEnabled: "mdi-controller",
-    iconDisabled: "mdi-controller",
+    iconEnabled: "mdiController",
+    iconDisabled: "mdiController",
     model: platformsGroupByRef,
     modelTrigger: setPlatformDrawerGroupBy,
   },
@@ -154,16 +154,16 @@ const galleryOptions = computed(() => [
   {
     title: t("settings.group-roms"),
     description: t("settings.group-roms-desc"),
-    iconEnabled: "mdi-group",
-    iconDisabled: "mdi-ungroup",
+    iconEnabled: "mdiGroup",
+    iconDisabled: "mdiUngroup",
     model: groupRomsRef,
     modelTrigger: toggleGroupRoms,
   },
   {
     title: t("settings.show-siblings"),
     description: t("settings.show-siblings-desc"),
-    iconEnabled: "mdi-account-group-outline",
-    iconDisabled: "mdi-account-outline",
+    iconEnabled: "mdiAccountGroupOutline",
+    iconDisabled: "mdiAccountOutline",
     model: siblingsRef,
     disabled: !groupRomsRef,
     modelTrigger: toggleSiblings,
@@ -171,40 +171,40 @@ const galleryOptions = computed(() => [
   {
     title: t("settings.show-regions"),
     description: t("settings.show-regions-desc"),
-    iconEnabled: "mdi-flag-outline",
-    iconDisabled: "mdi-flag-off-outline",
+    iconEnabled: "mdiFlagOutline",
+    iconDisabled: "mdiFlagOffOutline",
     model: regionsRef,
     modelTrigger: toggleRegions,
   },
   {
     title: t("settings.show-languages"),
     description: t("settings.show-languages-desc"),
-    iconEnabled: "mdi-flag-outline",
-    iconDisabled: "mdi-flag-off-outline",
+    iconEnabled: "mdiFlagOutline",
+    iconDisabled: "mdiFlagOffOutline",
     model: languagesRef,
     modelTrigger: toggleLanguages,
   },
   {
     title: t("settings.show-status"),
     description: t("settings.show-status-desc"),
-    iconEnabled: "mdi-check-circle-outline",
-    iconDisabled: "mdi-close-circle-outline",
+    iconEnabled: "mdiCheckCircleOutline",
+    iconDisabled: "mdiCloseCircleOutline",
     model: statusRef,
     modelTrigger: toggleStatus,
   },
   {
     title: t("settings.show-actionbar"),
     description: t("settings.show-actionbar-desc"),
-    iconEnabled: "mdi-card",
-    iconDisabled: "mdi-card-outline",
+    iconEnabled: "mdiCard",
+    iconDisabled: "mdiCardOutline",
     model: actionBarRef,
     modelTrigger: toggleActionBar,
   },
   {
     title: t("settings.enable-3d-effect"),
     description: t("settings.enable-3d-effect-desc"),
-    iconEnabled: "mdi-cube",
-    iconDisabled: "mdi-cube-outline",
+    iconEnabled: "mdiCube",
+    iconDisabled: "mdiCubeOutline",
     model: enable3DEffectRef,
     modelTrigger: toggle3DEffect,
   },
@@ -287,12 +287,12 @@ const toggle3DEffect = (value: boolean) => {
 </script>
 <template>
   <r-section
-    icon="mdi-palette-swatch-outline"
+    icon="mdiPaletteSwatchOutline"
     :title="t('settings.interface')"
     class="ma-2"
   >
     <template #content>
-      <v-chip label variant="text" prepend-icon="mdi-home" class="ml-2 mt-1">{{
+      <v-chip label variant="text" prepend-icon="mdiHome" class="ml-2 mt-1">{{
         t("settings.home")
       }}</v-chip>
       <v-divider class="border-opacity-25 ma-1" />
@@ -318,7 +318,7 @@ const toggle3DEffect = (value: boolean) => {
       <v-chip
         label
         variant="text"
-        prepend-icon="mdi-controller"
+        prepend-icon="mdiController"
         class="ml-2 mt-4"
         >{{ t("settings.platforms-drawer") }}</v-chip
       >
@@ -348,7 +348,7 @@ const toggle3DEffect = (value: boolean) => {
       <v-chip
         label
         variant="text"
-        prepend-icon="mdi-view-grid"
+        prepend-icon="mdiViewGrid"
         class="ml-2 mt-4"
         >{{ t("settings.gallery") }}</v-chip
       >
@@ -376,7 +376,7 @@ const toggle3DEffect = (value: boolean) => {
       <v-chip
         label
         variant="text"
-        prepend-icon="mdi-view-grid"
+        prepend-icon="mdiViewGrid"
         class="ml-2 mt-4"
         >{{ t("common.virtual-collections") }}</v-chip
       >
@@ -389,8 +389,8 @@ const toggle3DEffect = (value: boolean) => {
             :description="t('settings.show-virtual-collections-desc')"
             :icon="
               showVirtualCollectionsRef
-                ? 'mdi-bookmark-box-multiple'
-                : 'mdi-bookmark-box-multiple'
+                ? 'mdiBookmarkBoxMultiple'
+                : 'mdiBookmarkBoxMultiple'
             "
             v-model="showVirtualCollectionsRef"
             @update:model-value="toggleShowVirtualCollections"

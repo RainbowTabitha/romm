@@ -23,8 +23,8 @@ const props = defineProps<{ rom: DetailedRom }>();
 const downloadStore = storeDownload();
 const heartbeatStore = storeHeartbeat();
 const emitter = inject<Emitter<Events>>("emitter");
-const playInfoIcon = ref("mdi-play");
-const qrCodeIcon = ref("mdi-qrcode");
+const playInfoIcon = ref("mdiPlay");
+const qrCodeIcon = ref("mdiQrcode");
 const configStore = storeConfig();
 const { config } = storeToRefs(configStore);
 const auth = storeAuth();
@@ -57,7 +57,7 @@ async function copyDownloadLink(rom: DetailedRom) {
     await navigator.clipboard.writeText(downloadLink);
     emitter?.emit("snackbarShow", {
       msg: "Download link copied to clipboard!",
-      icon: "mdi-check-bold",
+      icon: "mdiCheckBold",
       color: "green",
       timeout: 2000,
     });
@@ -88,7 +88,7 @@ async function copyDownloadLink(rom: DetailedRom) {
           open-delay="1000"
           >{{ t("rom.download") }} {{ rom.name }}</v-tooltip
         >
-        <v-icon icon="mdi-download" size="large" />
+        <v-icon icon="mdiDownload" size="large" />
       </v-btn>
       <v-btn
         :disabled="rom.missing_from_fs"
@@ -103,7 +103,7 @@ async function copyDownloadLink(rom: DetailedRom) {
           open-delay="1000"
           >{{ t("rom.copy-link") }}</v-tooltip
         >
-        <v-icon icon="mdi-content-copy" />
+        <v-icon icon="mdiContentCopy" />
       </v-btn>
       <v-btn
         v-if="ejsEmulationSupported"
@@ -156,7 +156,7 @@ async function copyDownloadLink(rom: DetailedRom) {
             class="flex-grow-1"
             v-bind="menuProps"
           >
-            <v-icon icon="mdi-dots-vertical" size="large" />
+            <v-icon icon="mdiDotsVertical" size="large" />
           </v-btn>
         </template>
         <admin-menu :rom="rom" />

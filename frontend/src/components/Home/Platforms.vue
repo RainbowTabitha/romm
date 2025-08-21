@@ -36,16 +36,14 @@ function onHover(emitData: { isHovering: boolean; id: number }) {
 }
 </script>
 <template>
-  <r-section icon="mdi-controller" :title="t('common.platforms')">
+  <r-section icon="mdiController" :title="t('common.platforms')">
     <template #toolbar-append>
       <v-btn
         aria-label="Toggle platforms grid view"
         icon
         rounded="0"
         @click="toggleGridPlatforms"
-        ><v-icon>{{
-          gridPlatforms ? "mdi-view-comfy" : "mdi-view-column"
-        }}</v-icon>
+        ><v-icon>{{ gridPlatforms ? "mdiViewComfy" : "mdiViewColumn" }}</v-icon>
       </v-btn>
     </template>
     <template #content>

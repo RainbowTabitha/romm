@@ -79,7 +79,7 @@ async function goToRandomGame() {
     if (!romsResponse.total || romsResponse.total === 0) {
       emitter?.emit("snackbarShow", {
         msg: "No games found",
-        icon: "mdi-information",
+        icon: "mdiInformation",
         color: "info",
         timeout: 3000,
       });
@@ -99,7 +99,7 @@ async function goToRandomGame() {
     } else {
       emitter?.emit("snackbarShow", {
         msg: "Could not find a random game",
-        icon: "mdi-alert",
+        icon: "mdiAlert",
         color: "warning",
         timeout: 3000,
       });
@@ -108,7 +108,7 @@ async function goToRandomGame() {
     console.error("Error fetching random game:", error);
     emitter?.emit("snackbarShow", {
       msg: "Error finding random game",
-      icon: "mdi-close-circle",
+      icon: "mdiCloseCircle",
       color: "red",
       timeout: 4000,
     });
@@ -127,6 +127,6 @@ async function goToRandomGame() {
     :title="t('common.random')"
     class="bg-surface ma-0"
   >
-    <v-icon>mdi-shuffle-variant</v-icon>
+    <v-icon :icon="mdiShuffleVariant"></v-icon>
   </v-btn>
 </template>

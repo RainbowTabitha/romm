@@ -24,7 +24,7 @@ defineProps<{
                 rounded="0"
                 variant="text"
                 size="x-small"
-                icon="mdi-pencil"
+                icon="mdiPencil"
                 class="ml-0"
                 @click="$emit('clickEdit')"
               />
@@ -35,7 +35,7 @@ defineProps<{
                 rounded="0"
                 variant="text"
                 size="x-small"
-                icon="mdi-delete"
+                icon="mdiDelete"
                 class="text-romm-red"
                 @click="$emit('clickDelete')"
               />

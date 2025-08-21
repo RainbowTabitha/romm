@@ -56,7 +56,7 @@ async function updateCollection() {
     .then(({ data }) => {
       emitter?.emit("snackbarShow", {
         msg: "Collection updated successfully",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       currentSmartCollection.value = data;
@@ -67,7 +67,7 @@ async function updateCollection() {
         msg: `Failed to update collection: ${
           error.response?.data?.msg || error.message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     })
@@ -115,18 +115,18 @@ async function updateCollection() {
                     indeterminate
                   />
                 </template>
-                <v-icon>mdi-pencil</v-icon></v-btn
-              >
+                <v-icon :icon="mdiPencil"></v-icon
+              ></v-btn>
               <template v-else>
                 <v-btn @click="closeEditable" size="small" class="bg-toplayer"
-                  ><v-icon color="romm-red">mdi-close</v-icon></v-btn
-                >
+                  ><v-icon color="romm-red" :icon="mdiClose"></v-icon
+                ></v-btn>
                 <v-btn
                   @click="updateCollection"
                   size="small"
                   class="bg-toplayer ml-1"
-                  ><v-icon color="romm-green">mdi-check</v-icon></v-btn
-                >
+                  ><v-icon color="romm-green" :icon="mdiCheck"></v-icon
+                ></v-btn>
               </template>
             </template>
           </div>
@@ -157,7 +157,7 @@ async function updateCollection() {
               size="small"
               :color="currentSmartCollection.is_public ? 'primary' : ''"
               ><v-icon class="mr-1">{{
-                currentSmartCollection.is_public ? "mdi-lock-open" : "mdi-lock"
+                currentSmartCollection.is_public ? "mdiLockOpen" : "mdiLock"
               }}</v-icon
               >{{
                 currentSmartCollection.is_public
@@ -191,8 +191,8 @@ async function updateCollection() {
               class="mt-2"
               v-model="currentSmartCollection.is_public"
               color="primary"
-              false-icon="mdi-lock"
-              true-icon="mdi-lock-open"
+              false-icon="mdiLock"
+              true-icon="mdiLockOpen"
               inset
               hide-details
               :label="
@@ -232,7 +232,7 @@ async function updateCollection() {
         auth.scopes.includes('collections.write') &&
         currentSmartCollection.user__username === auth.user?.username
       "
-      icon="mdi-alert"
+      icon="mdiAlert"
       icon-color="red"
       :title="t('collection.danger-zone')"
       elevation="0"
@@ -252,7 +252,7 @@ async function updateCollection() {
               )
             "
           >
-            <v-icon class="text-romm-red mr-2">mdi-delete</v-icon>
+            <v-icon class="text-romm-red mr-2" :icon="mdiDelete"></v-icon>
             {{ t("collection.delete-collection") }}
           </v-btn>
         </div>

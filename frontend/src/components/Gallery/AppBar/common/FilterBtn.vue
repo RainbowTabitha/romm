@@ -22,7 +22,7 @@ const { activeFilterDrawer } = storeToRefs(galleryFilterStore);
         variant="text"
         rounded="0"
         v-bind="props"
-        icon="mdi-filter-variant"
+        icon="mdiFilterVariant"
         :color="
           activeFilterDrawer
             ? 'primary'

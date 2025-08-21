@@ -31,9 +31,10 @@ const navigationStore = storeNavigation();
     @click="navigationStore.goSearch"
   >
     <div class="d-flex flex-column align-center">
-      <v-icon :color="$route.name == 'search' ? 'primary' : ''"
-        >mdi-magnify</v-icon
-      >
+      <v-icon
+        :color="$route.name == 'search' ? 'primary' : ''"
+        :icon="mdiMagnify"
+      ></v-icon>
       <v-expand-transition>
         <span
           v-if="withTag"

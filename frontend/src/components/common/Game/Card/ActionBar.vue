@@ -64,7 +64,7 @@ watch(menuOpen, (val) => {
         class="action-bar-btn-small flex-grow-1"
         :size="computedSize"
         :disabled="downloadStore.value.includes(rom.id) || rom.missing_from_fs"
-        icon="mdi-download"
+        icon="mdiDownload"
         variant="text"
         rounded="0"
         @click.prevent="romApi.downloadRom({ rom })"
@@ -87,7 +87,7 @@ watch(menuOpen, (val) => {
             params: { rom: rom?.id },
           })
         "
-        icon="mdi-play"
+        icon="mdiPlay"
         variant="text"
         rounded="0"
         :aria-label="`Play ${rom.name}`"
@@ -104,7 +104,7 @@ watch(menuOpen, (val) => {
             params: { rom: rom?.id },
           })
         "
-        icon="mdi-play"
+        icon="mdiPlay"
         variant="text"
         rounded="0"
         :aria-label="`Play ${rom.name}`"
@@ -117,7 +117,7 @@ watch(menuOpen, (val) => {
         class="action-bar-btn-small flex-grow-1"
         :size="computedSize"
         @click="emitter?.emit('showQRCodeDialog', rom)"
-        icon="mdi-qrcode"
+        icon="mdiQrcode"
         variant="text"
         rounded="0"
         :aria-label="`Show ${rom.name} QR code`"
@@ -138,7 +138,7 @@ watch(menuOpen, (val) => {
             class="action-bar-btn-small flex-grow-1"
             :size="computedSize"
             v-bind="props"
-            icon="mdi-dots-vertical"
+            icon="mdiDotsVertical"
             variant="text"
             rounded="0"
             :aria-label="`${rom.name} admin menu`"

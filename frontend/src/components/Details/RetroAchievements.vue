@@ -104,7 +104,7 @@ onMounted(() => {
   <v-list-item class="pa-0 mt-2">
     <template #prepend>
       <v-chip v-if="rom.merged_ra_metadata?.achievements" label rounded="0"
-        ><v-icon class="mr-2">mdi-trophy</v-icon
+        ><v-icon class="mr-2" :icon="mdiTrophy"></v-icon
         >{{ targetRom?.earned_achievements.length ?? 0 }} /
         {{ rom.merged_ra_metadata?.achievements.length }}</v-chip
       >
@@ -134,7 +134,7 @@ onMounted(() => {
     class="mt-4"
     ><template #prepend
       ><v-icon class="mr-2">{{
-        showEarned ? "mdi-checkbox-outline" : "mdi-checkbox-blank-outline"
+        showEarned ? "mdiCheckboxOutline" : "mdiCheckboxBlankOutline"
       }}</v-icon></template
     >{{ t("rom.show-earned-only") }}</v-chip
   >

@@ -127,7 +127,7 @@ const onClose = () => {
         :label="t('platform.search-platform')"
         :tabindex="tabIndex"
         aria-label="Search platform"
-        prepend-inner-icon="mdi-filter-outline"
+        prepend-inner-icon="mdiFilterOutline"
         variant="solo-filled"
         density="compact"
         single-line

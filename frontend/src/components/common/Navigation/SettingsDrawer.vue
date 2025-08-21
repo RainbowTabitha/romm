@@ -31,7 +31,7 @@ async function logout() {
 
     emitter?.emit("snackbarShow", {
       msg: "Logged out successfully",
-      icon: "mdi-check-bold",
+      icon: "mdiCheckBold",
       color: "green",
     });
 
@@ -104,7 +104,7 @@ function onClose() {
         :tabindex="tabIndex"
         rounded
         :to="{ name: ROUTES.USER_PROFILE, params: { user: user?.id } }"
-        append-icon="mdi-account"
+        append-icon="mdiAccount"
         aria-label="Profile"
         role="listitem"
         >{{ t("common.profile") }}</v-list-item
@@ -114,7 +114,7 @@ function onClose() {
         class="mt-1"
         rounded
         :to="{ name: ROUTES.USER_INTERFACE }"
-        append-icon="mdi-palette"
+        append-icon="mdiPalette"
         aria-label="User Interface"
         role="listitem"
         >{{ t("common.user-interface") }}</v-list-item
@@ -124,7 +124,7 @@ function onClose() {
         :tabindex="tabIndex"
         class="mt-1"
         rounded
-        append-icon="mdi-table-cog"
+        append-icon="mdiTableCog"
         aria-label="Library management"
         role="listitem"
         :to="{ name: ROUTES.LIBRARY_MANAGEMENT }"
@@ -136,7 +136,7 @@ function onClose() {
         class="mt-1"
         rounded
         :to="{ name: ROUTES.ADMINISTRATION }"
-        append-icon="mdi-security"
+        append-icon="mdiSecurity"
         aria-label="Administration"
         role="listitem"
         >{{ t("common.administration") }}
@@ -147,7 +147,7 @@ function onClose() {
         class="mt-1"
         rounded
         :to="{ name: ROUTES.SERVER_STATS }"
-        append-icon="mdi-server"
+        append-icon="mdiServer"
         aria-label="Server Stats"
         role="listitem"
         >{{ t("common.server-stats") }}
@@ -158,7 +158,7 @@ function onClose() {
         class="mt-1"
         rounded
         @click="emitter?.emit('showAboutDialog', null)"
-        append-icon="mdi-help-circle-outline"
+        append-icon="mdiHelpCircleOutline"
         aria-label="About"
         role="listitem"
         >{{ t("common.about") }}
@@ -168,7 +168,7 @@ function onClose() {
       <v-btn
         @click="logout"
         :tabindex="tabIndex"
-        append-icon="mdi-location-exit"
+        append-icon="mdiLocationExit"
         block
         aria-label="Logout"
         class="bg-toplayer text-romm-red"

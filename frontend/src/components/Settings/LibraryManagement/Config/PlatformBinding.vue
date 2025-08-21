@@ -21,7 +21,7 @@ const editable = ref(false);
 </script>
 
 <template>
-  <r-section icon="mdi-controller" :title="t('settings.platforms-bindings')">
+  <r-section icon="mdiController" :title="t('settings.platforms-bindings')">
     <template #toolbar-title-append>
       <v-tooltip bottom max-width="400">
         <template #activator="{ props }">
@@ -29,7 +29,7 @@ const editable = ref(false);
             v-bind="props"
             size="small"
             variant="text"
-            icon="mdi-information-outline"
+            icon="mdiInformationOutline"
           />
         </template>
         <p>
@@ -46,7 +46,7 @@ const editable = ref(false);
         size="small"
         :color="editable ? 'primary' : ''"
         variant="text"
-        icon="mdi-cog"
+        icon="mdiCog"
         @click="editable = !editable"
       />
     </template>

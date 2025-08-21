@@ -36,7 +36,7 @@ const auth = storeAuth();
     @click="emitter?.emit('showUploadRomDialog', null)"
   >
     <div class="d-flex flex-column align-center">
-      <v-icon>mdi-cloud-upload-outline</v-icon>
+      <v-icon :icon="mdiCloudUploadOutline"></v-icon>
       <v-expand-transition>
         <span v-if="withTag" class="text-caption text-center">{{
           t("common.upload")

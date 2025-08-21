@@ -101,7 +101,7 @@ async function updatePlatform() {
     .then(({ data: platform }) => {
       emitter?.emit("snackbarShow", {
         msg: "Platform updated successfully",
-        icon: "mdi-check-bold",
+        icon: "mdiCheckBold",
         color: "green",
       });
       currentPlatform.value = platform;
@@ -112,7 +112,7 @@ async function updatePlatform() {
         msg: `Failed to update platform: ${
           error.response?.data?.msg || error.message
         }`,
-        icon: "mdi-close-circle",
+        icon: "mdiCloseCircle",
         color: "red",
       });
     });
@@ -145,7 +145,7 @@ async function setAspectRatio() {
       .then(({ data }) => {
         emitter?.emit("snackbarShow", {
           msg: "Platform updated successfully",
-          icon: "mdi-check-bold",
+          icon: "mdiCheckBold",
           color: "green",
         });
         if (currentPlatform.value) {
@@ -157,7 +157,7 @@ async function setAspectRatio() {
           msg: `Failed to update aspect ratio: ${
             error.response?.data?.msg || error.message
           }`,
-          icon: "mdi-close-circle",
+          icon: "mdiCloseCircle",
           color: "red",
         });
       });
@@ -217,23 +217,23 @@ watch(
                     indeterminate
                   />
                 </template>
-                <v-icon>mdi-pencil</v-icon></v-btn
-              >
+                <v-icon :icon="mdiPencil"></v-icon
+              ></v-btn>
               <template v-else>
                 <v-btn
                   @click="closeEditable"
                   size="small"
                   class="bg-toplayer"
                   :tabindex="tabIndex"
-                  ><v-icon color="romm-red">mdi-close</v-icon></v-btn
-                >
+                  ><v-icon color="romm-red" :icon="mdiClose"></v-icon
+                ></v-btn>
                 <v-btn
                   @click="updatePlatform"
                   size="small"
                   class="bg-toplayer ml-1"
                   :tabindex="tabIndex"
-                  ><v-icon color="romm-green">mdi-check</v-icon></v-btn
-                >
+                  ><v-icon color="romm-green" :icon="mdiCheck"></v-icon
+                ></v-btn>
               </template>
             </template>
           </div>
@@ -270,9 +270,10 @@ watch(
               :tabindex="tabIndex"
               @click="emitter?.emit('showUploadRomDialog', currentPlatform)"
             >
-              <v-icon class="text-romm-green mr-2"
-                >mdi-cloud-upload-outline</v-icon
-              >
+              <v-icon
+                class="text-romm-green mr-2"
+                :icon="mdiCloudUploadOutline"
+              ></v-icon>
               {{ t("platform.upload-roms") }}
             </v-btn>
             <v-btn
@@ -284,9 +285,10 @@ watch(
               class="ml-2 my-1 bg-toplayer"
             >
               <template #prepend>
-                <v-icon :color="scanning ? '' : 'primary'"
-                  >mdi-magnify-scan</v-icon
-                >
+                <v-icon
+                  :color="scanning ? '' : 'primary'"
+                  :icon="mdiMagnifyScan"
+                ></v-icon>
               </template>
               {{ t("scan.scan") }}
               <template #loader>
@@ -431,7 +433,7 @@ watch(
     </v-row>
     <r-section
       v-if="auth.scopes.includes('platforms.write')"
-      icon="mdi-cog"
+      icon="mdiCog"
       :title="t('platform.settings')"
       elevation="0"
       titleDivider
@@ -443,7 +445,7 @@ watch(
           label
           variant="text"
           class="ml-2 mt-2"
-          prepend-icon="mdi-aspect-ratio"
+          prepend-icon="mdiAspectRatio"
           :tabindex="tabIndex"
           >{{ t("platform.cover-style") }}</v-chip
         >
@@ -496,7 +498,7 @@ watch(
     </r-section>
     <r-section
       v-if="auth.scopes.includes('platforms.write')"
-      icon="mdi-alert"
+      icon="mdiAlert"
       icon-color="red"
       :title="t('platform.danger-zone')"
       elevation="0"
@@ -512,7 +514,7 @@ watch(
             variant="flat"
             @click="emitter?.emit('showDeletePlatformDialog', currentPlatform)"
           >
-            <v-icon class="text-romm-red mr-2">mdi-delete</v-icon>
+            <v-icon class="text-romm-red mr-2" :icon="mdiDelete"></v-icon>
             {{ t("platform.delete-platform") }}
           </v-btn>
         </div>

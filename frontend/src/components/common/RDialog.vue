@@ -75,7 +75,7 @@ onMounted(() => {
             size="small"
             variant="text"
             class="rounded"
-            icon="mdi-close"
+            icon="mdiClose"
           />
         </template>
       </v-toolbar>

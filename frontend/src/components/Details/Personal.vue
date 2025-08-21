@@ -79,20 +79,20 @@ watch(
         selected-class="bg-toplayer"
       >
         <v-tab
-          prepend-icon="mdi-list-status"
+          prepend-icon="mdiListStatus"
           class="rounded text-caption"
           value="status"
           >Status</v-tab
         >
         <v-tab
           v-if="rom.ra_id && auth.user?.ra_username"
-          prepend-icon="mdi-trophy"
+          prepend-icon="mdiTrophy"
           class="rounded text-caption"
           value="ra"
           >RetroAchievements</v-tab
         >
         <v-tab
-          prepend-icon="mdi-notebook-edit"
+          prepend-icon="mdiNotebookEdit"
           class="rounded text-caption"
           value="notes"
           >Notes</v-tab
@@ -186,8 +186,8 @@ watch(
                     length="10"
                     size="26"
                     :disabled="!scopes.includes('roms.user.write')"
-                    full-icon="mdi-chili-mild"
-                    empty-icon="mdi-chili-mild-outline"
+                    full-icon="mdiChiliMild"
+                    empty-icon="mdiChiliMildOutline"
                     v-model="romUser.difficulty"
                     @update:model-value="
                       romUser.difficulty =
@@ -259,7 +259,7 @@ watch(
         </v-tabs-window-item>
         <v-tabs-window-item value="notes">
           <r-section
-            icon="mdi-account"
+            icon="mdiAccount"
             :title="t('rom.my-notes')"
             elevation="0"
             titleDivider
@@ -284,7 +284,7 @@ watch(
                       class="bg-toplayer"
                     >
                       <v-icon size="large">
-                        {{ romUser.note_is_public ? "mdi-eye" : "mdi-eye-off" }}
+                        {{ romUser.note_is_public ? "mdiEye" : "mdiEyeOff" }}
                       </v-icon>
                     </v-btn>
                   </template></v-tooltip
@@ -303,7 +303,7 @@ watch(
                       class="bg-toplayer"
                     >
                       <v-icon size="large">
-                        {{ editingNote ? "mdi-check" : "mdi-pencil" }}
+                        {{ editingNote ? "mdiCheck" : "mdiPencil" }}
                       </v-icon>
                     </v-btn>
                   </template></v-tooltip
@@ -333,7 +333,7 @@ watch(
           </r-section>
           <r-section
             v-if="publicNotes.length > 0"
-            icon="mdi-account-multiple"
+            icon="mdiAccountMultiple"
             :title="t('rom.public-notes')"
             elevation="0"
             titleDivider

@@ -134,7 +134,7 @@ async function stopScan() {
             :label="t('common.platforms')"
             item-title="name"
             item-value="id"
-            prepend-inner-icon="mdi-controller"
+            prepend-inner-icon="mdiController"
             variant="outlined"
             density="comfortable"
             multiple
@@ -202,7 +202,7 @@ async function stopScan() {
             :items="metadataOptions"
             :label="t('scan.metadata-sources')"
             item-title="name"
-            prepend-inner-icon="mdi-database-search"
+            prepend-inner-icon="mdiDatabaseSearch"
             variant="outlined"
             density="comfortable"
             multiple
@@ -242,7 +242,7 @@ async function stopScan() {
             v-model="scanType"
             :items="scanOptions"
             :label="t('scan.scan-options')"
-            prepend-inner-icon="mdi-magnify-scan"
+            prepend-inner-icon="mdiMagnifyScan"
             hide-details
             density="comfortable"
             variant="outlined"
@@ -268,7 +268,10 @@ async function stopScan() {
           @click="scan"
         >
           <template #prepend>
-            <v-icon :color="scanning ? '' : 'primary'">mdi-magnify-scan</v-icon>
+            <v-icon
+              :color="scanning ? '' : 'primary'"
+              :icon="mdiMagnifyScan"
+            ></v-icon>
           </template>
           {{ t("scan.scan") }}
           <template #loader>
@@ -288,12 +291,15 @@ async function stopScan() {
           @click="stopScan"
         >
           <template #prepend>
-            <v-icon :color="scanning ? 'red' : ''">mdi-alert-octagon</v-icon>
+            <v-icon
+              :color="scanning ? 'red' : ''"
+              :icon="mdiAlertOctagon"
+            ></v-icon>
           </template>
           {{ t("scan.abort") }}
         </v-btn>
         <v-btn
-          prepend-icon="mdi-table-cog"
+          prepend-icon="mdiTableCog"
           rounded="4"
           height="40"
           class="ml-2"
@@ -304,7 +310,7 @@ async function stopScan() {
         <v-alert
           v-if="metadataSources.length == 0"
           type="warning"
-          icon="mdi-alert"
+          icon="mdiAlert"
           variant="tonal"
           class="mx-4"
           density="compact"
@@ -378,7 +384,7 @@ async function stopScan() {
                         label
                       >
                         Not identified
-                        <v-icon class="ml-1">mdi-close</v-icon>
+                        <v-icon class="ml-1" :icon="mdiClose"></v-icon>
                       </v-chip>
                       <v-chip
                         v-if="rom.hasheous_id"
@@ -387,7 +393,7 @@ async function stopScan() {
                         size="small"
                       >
                         <v-avatar class="bg-romm-green" size="26" rounded="0">
-                          <v-icon>mdi-check-decagram-outline</v-icon>
+                          <v-icon :icon="mdiCheckDecagramOutline"></v-icon>
                         </v-avatar>
                       </v-chip>
                       <v-chip
@@ -483,7 +489,7 @@ async function stopScan() {
           size="small"
           class="mr-1 my-1"
         >
-          <v-icon left>mdi-controller</v-icon>
+          <v-icon left :icon="mdiController"></v-icon>
           <span v-if="xs" class="ml-2">{{
             t("scan.platforms-scanned-n", scanningPlatforms.length)
           }}</span>
@@ -502,7 +508,7 @@ async function stopScan() {
           text-color="white"
           class="ml-1 my-1"
         >
-          <v-icon left> mdi-disc </v-icon>
+          <v-icon left> mdiDisc </v-icon>
           <span v-if="xs" class="ml-2">{{
             t("scan.roms-scanned-n", scanStats.scanned_roms)
           }}</span>
