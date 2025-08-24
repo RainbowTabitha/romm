@@ -22,6 +22,7 @@ if TYPE_CHECKING:
     from models.assets import Save, Screenshot, State
     from models.collection import Collection, SmartCollection
     from models.rom import RomUser
+    from models.rom_verification import RomVerification
 
 
 class Role(enum.Enum):
@@ -57,6 +58,9 @@ class User(BaseModel, SimpleUser):
         lazy="raise", back_populates="user"
     )
     rom_users: Mapped[list[RomUser]] = relationship(lazy="raise", back_populates="user")
+    rom_verifications: Mapped[list["RomVerification"]] = relationship(
+        lazy="raise", back_populates="user"
+    )
     collections: Mapped[list[Collection]] = relationship(
         lazy="raise", back_populates="user"
     )

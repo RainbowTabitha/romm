@@ -7,6 +7,7 @@ from config import (
     ENABLE_SCHEDULED_RESCAN,
     ENABLE_SCHEDULED_UPDATE_LAUNCHBOX_METADATA,
     ENABLE_SCHEDULED_UPDATE_SWITCH_TITLEDB,
+    ENABLE_SCHEDULED_CLEANUP_VERIFICATIONS,
     SENTRY_DSN,
 )
 from handler.metadata.base_hander import (
@@ -24,6 +25,7 @@ from opentelemetry import trace
 from tasks.scheduled.scan_library import scan_library_task
 from tasks.scheduled.update_launchbox_metadata import update_launchbox_metadata_task
 from tasks.scheduled.update_switch_titledb import update_switch_titledb_task
+from tasks.scheduled.cleanup_expired_verifications import cleanup_expired_verifications_task
 from utils import get_version
 from utils.cache import conditionally_set_cache
 from utils.context import initialize_context
@@ -48,6 +50,9 @@ async def main() -> None:
         if ENABLE_SCHEDULED_UPDATE_LAUNCHBOX_METADATA:
             log.info("Starting scheduled update launchbox metadata")
             update_launchbox_metadata_task.init()
+        if ENABLE_SCHEDULED_CLEANUP_VERIFICATIONS:
+            log.info("Starting scheduled cleanup of expired verifications")
+            cleanup_expired_verifications_task.init()
 
         log.info("Initializing cache with fixtures data")
         await conditionally_set_cache(

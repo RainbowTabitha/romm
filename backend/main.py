@@ -26,6 +26,7 @@ from endpoints import (
     platform,
     raw,
     rom,
+    rom_verification,
     saves,
     screenshots,
     search,
@@ -117,6 +118,7 @@ app.include_router(auth.router, prefix="/api")
 app.include_router(user.router, prefix="/api")
 app.include_router(platform.router, prefix="/api")
 app.include_router(rom.router, prefix="/api")
+app.include_router(rom_verification.router, prefix="/api")
 app.include_router(search.router, prefix="/api")
 app.include_router(saves.router, prefix="/api")
 app.include_router(states.router, prefix="/api")

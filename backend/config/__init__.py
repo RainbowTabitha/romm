@@ -150,6 +150,13 @@ SCHEDULED_UPDATE_LAUNCHBOX_METADATA_CRON: Final = os.environ.get(
     "SCHEDULED_UPDATE_LAUNCHBOX_METADATA_CRON",
     "0 5 * * *",  # At 5:00 AM every day
 )
+ENABLE_SCHEDULED_CLEANUP_VERIFICATIONS: Final = str_to_bool(
+    os.environ.get("ENABLE_SCHEDULED_CLEANUP_VERIFICATIONS", "true")
+)
+SCHEDULED_CLEANUP_VERIFICATIONS_CRON: Final = os.environ.get(
+    "SCHEDULED_CLEANUP_VERIFICATIONS_CRON",
+    "0 2 * * *",  # At 2:00 AM every day
+)
 
 # EMULATION
 DISABLE_EMULATOR_JS = str_to_bool(os.environ.get("DISABLE_EMULATOR_JS", "false"))
