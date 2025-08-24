@@ -62,7 +62,7 @@ class RomVerification(BaseModel):
     
     # Relationships
     rom: Mapped[Rom] = relationship(lazy="joined", back_populates="verifications")
-    user: Mapped[User] = relationship(lazy="joined", back_populates="rom_verifications")
+    user: Mapped[User] = relationship(lazy="joined", back_populates="rom_verifications", foreign_keys=[user_id])
     verifier: Mapped[User | None] = relationship(
         "User", 
         foreign_keys=[verified_by], 

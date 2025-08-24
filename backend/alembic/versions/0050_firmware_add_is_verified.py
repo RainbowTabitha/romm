@@ -17,8 +17,14 @@ depends_on = None
 
 
 def upgrade() -> None:
-    with op.batch_alter_table("firmware", schema=None) as batch_op:
-        batch_op.add_column(sa.Column("is_verified", sa.Boolean(), nullable=True))
+    # Check if the column already exists
+    connection = op.get_bind()
+    inspector = sa.inspect(connection)
+    columns = [col['name'] for col in inspector.get_columns('firmware')]
+    
+    if 'is_verified' not in columns:
+        with op.batch_alter_table("firmware", schema=None) as batch_op:
+            batch_op.add_column(sa.Column("is_verified", sa.Boolean(), nullable=True))
 
     # Calculate is_verified for all firmware
     from handler.database import db_firmware_handler

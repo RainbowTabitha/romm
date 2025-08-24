@@ -59,7 +59,7 @@ class User(BaseModel, SimpleUser):
     )
     rom_users: Mapped[list[RomUser]] = relationship(lazy="raise", back_populates="user")
     rom_verifications: Mapped[list["RomVerification"]] = relationship(
-        lazy="raise", back_populates="user"
+        lazy="raise", back_populates="user", foreign_keys="[RomVerification.user_id]"
     )
     collections: Mapped[list[Collection]] = relationship(
         lazy="raise", back_populates="user"
